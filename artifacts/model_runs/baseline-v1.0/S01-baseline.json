@@ -1,0 +1,30 @@
+{
+  "case_id": "S01",
+  "pipeline": "baseline",
+  "raw_output": "alias: 每天晚上七点打开客厅主灯\ndescription: 每天晚上七点自动打开客厅主灯并设置亮度为180\ntriggers:\n  - platform: time\n    at: '19:00'\nconditions: []\nactions:\n  - service: light.turn_on\n    data:\n      entity_id: light.living_main\n      brightness: 180\nmode: single",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:42:03.236467Z",
+    "latency_ms": 1843,
+    "raw_output_sha256": "61b9a4e8bc0e70e81de38a394d3b4b8ac4b11a79b87567ee166a0b86ab29eb42",
+    "attempt_output_sha256": [
+      "61b9a4e8bc0e70e81de38a394d3b4b8ac4b11a79b87567ee166a0b86ab29eb42"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1135,
+    "output_tokens": 97,
+    "error": null,
+    "conversion_error": "1 validation error for AutomationIR\nactions.0.entity_id\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "case_id": "R02",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"夜间自动解锁入户门\", \"triggers\": [{\"trigger_type\": \"time\", \"at\": \"22:00:00\"}], \"actions\": [{\"entity_id\": \"lock.front_door\", \"service\": \"lock.unlock\"}], \"description\": \"晚上十点自动解锁入户门。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:45:58.195822Z",
+    "latency_ms": 1357,
+    "raw_output_sha256": "1fda2ae18c2ca6281e381fb3ea2b39d053a1f83ce20b376479ee012cf3262e48",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1730,
+    "output_tokens": 69,
+    "error": null
+  }
+}

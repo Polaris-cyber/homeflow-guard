@@ -1,0 +1,8 @@
+{
+  "case_id": "S01",
+  "pipeline": "baseline",
+  "raw_output": "1 validation error for AutomationIR\nactions.0.entity_id\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type",
+  "run": {
+    "error": "1 validation error for AutomationIR\nactions.0.entity_id\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type"
+  }
+}

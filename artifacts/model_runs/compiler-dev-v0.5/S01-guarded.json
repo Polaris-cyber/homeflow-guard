@@ -1,0 +1,26 @@
+{
+  "case_id": "S01",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"每天晚上七点开灯\", \"triggers\": [{\"trigger_type\": \"time\", \"time\": {\"at\": \"19:00:00\"}}], \"conditions\": [], \"actions\": [{\"entity_id\": \"light.living_main\", \"service\": \"light.turn_on\", \"parameters\": {\"brightness\": 180}}], \"clarification_questions\": [], \"risk_acknowledgements\": []}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.5",
+    "schema_version": "automation-ir-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:56:13.050422Z",
+    "latency_ms": 3462,
+    "raw_output_sha256": "3c341e3961bd3299bdf295423220a73921f8e14941f7a4a2fd60a63d2140a5f7",
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 2162,
+    "output_tokens": 91,
+    "error": "2 validation errors for AutomationIR\ntriggers.0.time.at\n  Field required [type=missing, input_value={'trigger_type': 'time', ...me': {'at': '19:00:00'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\ntriggers.0.time.time\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'at': '19:00:00'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden"
+  }
+}

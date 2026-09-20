@@ -1,0 +1,30 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: ruff check .
+      - run: python -m pytest
+      - run: python scripts/evaluate.py --mode fixture --pipeline guarded --split all --allow-pending-labels
+
+  home-assistant-config-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check representative configuration with Home Assistant stable
+        run: >-
+          docker run --rm
+          -v "${{ github.workspace }}/tests/ha_config:/config"
+          ghcr.io/home-assistant/home-assistant:stable
+          python -m homeassistant --script check_config -c /config

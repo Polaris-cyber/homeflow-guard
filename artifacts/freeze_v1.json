@@ -1,0 +1,15 @@
+{
+  "frozen_at_utc": "2026-09-20T13:59:24Z",
+  "prompt_version": "compiler-v1.0",
+  "schema_version": "automation-ir-v0.4",
+  "model": "qwen3:14b-q4_K_M",
+  "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+  "selected_from_dev_run": "artifacts/evaluations/rescored-compiler-dev-v0.12-threshold-schema-guarded-dev.json",
+  "sha256": {
+    "prompts/compiler_v1.md": "0c6a0ebf9f94346409cb8061ee3b46eec66c5afa834015f690c9563f79653332",
+    "prompts/baseline_v1.md": "73c0c9bfccb6903b61eede11f2ed428543365e15e04280eb4f873f4561021c77",
+    "data/gold_cases.jsonl": "ce978837f67bcb5e81abe1e9fb2fe6ef6605f97c3d664353efc9dd4135ada876",
+    "data/sample_home.yaml": "ee706da03bf0dacbd51d1bfa6f4d3e1e1f585e7a4756e169d11b996b8cb3ec69"
+  },
+  "note": "Freeze precedes the first 35-case locked test run. The 15-case development results are not independent test results."
+}

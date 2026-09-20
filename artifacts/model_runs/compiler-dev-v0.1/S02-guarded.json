@@ -1,0 +1,25 @@
+{
+  "case_id": "S02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"日落时关闭客厅窗帘\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"sun\",\n      \"entity_id\": \"sun.sun\",\n      \"to_state\": \"below_horizon\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"cover.living_curtain\",\n      \"service\": \"cover.close_cover\"\n    }\n  ],\n  \"description\": \"当太阳落山时，自动关闭客厅的窗帘。\",\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-17T18:27:54.217092Z",
+    "latency_ms": 1975,
+    "raw_output_sha256": "a071dc66352e4da6f927bd4fac380e8d1599827b54ea7d700f935f8ebd84193e",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1398,
+    "output_tokens": 119,
+    "error": null
+  }
+}

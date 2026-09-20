@@ -1,0 +1,25 @@
+{
+  "case_id": "S01",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"每天晚上七点打开客厅主灯\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"event\": \"sunrise\",\n      \"offset\": \"time+19:00:00\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_on\",\n      \"parameters\": {\n        \"brightness\": 180\n      }\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:48:20.257225Z",
+    "latency_ms": 2596,
+    "raw_output_sha256": "c8b6849b666599af8f8b714a716d768bdbff3422e733ff21f2e7f8505779d2d3",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1875,
+    "output_tokens": 128,
+    "error": null
+  }
+}

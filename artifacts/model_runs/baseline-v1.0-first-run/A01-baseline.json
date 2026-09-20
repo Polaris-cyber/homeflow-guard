@@ -1,0 +1,29 @@
+{
+  "case_id": "A01",
+  "pipeline": "baseline",
+  "raw_output": "alias: 晚上开灯\ndescription: 晚上自动开启客厅和卧室的主灯\ntriggers:\n  - platform: time\n    at: '19:00:00'\nconditions: []\nactions:\n  - service: light.turn_on\n    target:\n      entity_id: light.living_main\n  - service: light.turn_on\n    target:\n      entity_id: light.bedroom_main\nmode: single",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T06:07:40.935294Z",
+    "latency_ms": 1637,
+    "raw_output_sha256": "6f4ed96dc0fa41d2c88d094d53f7dc04b0136c59560219b3207e8db2c56e029c",
+    "attempt_output_sha256": [
+      "6f4ed96dc0fa41d2c88d094d53f7dc04b0136c59560219b3207e8db2c56e029c"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1062,
+    "output_tokens": 100,
+    "error": null
+  }
+}

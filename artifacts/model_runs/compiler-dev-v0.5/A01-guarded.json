@@ -1,0 +1,26 @@
+{
+  "case_id": "A01",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"晚上开灯\", \"triggers\": [], \"conditions\": [], \"actions\": [], \"clarification_questions\": [\"您希望在晚上什么时间开灯？\", \"您希望开哪个房间的灯？\"], \"risk_acknowledgements\": [], \"description\": \"需要进一步澄清用户希望在晚上什么时间开灯以及开哪个房间的灯。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.5",
+    "schema_version": "automation-ir-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:56:36.902640Z",
+    "latency_ms": 1432,
+    "raw_output_sha256": "7b1a57ebf043034d2d07336291b59a1f2a689682c53f0505b6811c6381de06b2",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1981,
+    "output_tokens": 78,
+    "error": null
+  }
+}

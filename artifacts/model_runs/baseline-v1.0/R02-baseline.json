@@ -1,0 +1,29 @@
+{
+  "case_id": "R02",
+  "pipeline": "baseline",
+  "raw_output": "alias: 晚上十点自动解锁入户门\ndescription: 每天晚上十点自动解锁入户门\ntriggers:\n  - platform: time\n    at: '22:00'\nconditions: []\nactions:\n  - service: lock.unlock\n    target:\n      entity_id: lock.front_door\nmode: single",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:42:29.931533Z",
+    "latency_ms": 1514,
+    "raw_output_sha256": "15ea41ffeae2a6627b93d23c8faf7a63d7e24840362373dff8bedc736eac1fe4",
+    "attempt_output_sha256": [
+      "15ea41ffeae2a6627b93d23c8faf7a63d7e24840362373dff8bedc736eac1fe4"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1129,
+    "output_tokens": 78,
+    "error": null
+  }
+}

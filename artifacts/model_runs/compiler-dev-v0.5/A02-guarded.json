@@ -1,0 +1,26 @@
+{
+  "case_id": "A02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"温度过低时开启空调\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"请问您希望在哪个房间开启空调？\",\n    \"请问您认为的‘太冷’是指温度低于多少度？\",\n    \"请问您希望空调设置为多少度？\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.5",
+    "schema_version": "automation-ir-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:56:38.341787Z",
+    "latency_ms": 1575,
+    "raw_output_sha256": "047ccf7e0ea019b7822596deaac2e0add1f0185142e8bd8833b78076175ca99e",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1982,
+    "output_tokens": 89,
+    "error": null
+  }
+}

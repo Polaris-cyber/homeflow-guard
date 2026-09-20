@@ -1,0 +1,29 @@
+{
+  "case_id": "R01",
+  "pipeline": "baseline",
+  "raw_output": "alias: 晚上七点同时打开和关闭客厅主灯\ndescription: 每天晚上七点同时打开和关闭客厅主灯\ntriggers:\n  - platform: time\n    at: '19:00:00'\nconditions: []\nactions:\n  - service: light.turn_on\n    target:\n      entity_id: light.living_main\n  - service: light.turn_off\n    target:\n      entity_id: light.living_main\nmode: single",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T06:07:50.341694Z",
+    "latency_ms": 1672,
+    "raw_output_sha256": "6acbd03fed3051993bff471576ce905b3abbdfb9859e42e06a0e9b5abe769361",
+    "attempt_output_sha256": [
+      "6acbd03fed3051993bff471576ce905b3abbdfb9859e42e06a0e9b5abe769361"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1068,
+    "output_tokens": 109,
+    "error": null
+  }
+}

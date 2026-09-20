@@ -1,0 +1,29 @@
+{
+  "case_id": "A03",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"回家后播放音乐\", \"triggers\": [], \"conditions\": [], \"actions\": [], \"clarification_questions\": [\"回家后如何判断？是否需要特定设备或状态来确认回家？\", \"播放什么音乐？是否需要指定媒体内容或来源？\"], \"risk_acknowledgements\": [], \"description\": \"需要明确回家的判断条件和播放音乐的具体内容。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.9-review-corrections",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:41:50.192564Z",
+    "latency_ms": 1694,
+    "raw_output_sha256": "d7e087c3611e5477df9c0e3484cc3ecf54d8cef1c3762a51e6b534ca53fb3aec",
+    "attempt_output_sha256": [
+      "d7e087c3611e5477df9c0e3484cc3ecf54d8cef1c3762a51e6b534ca53fb3aec"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2347,
+    "output_tokens": 83,
+    "error": null
+  }
+}

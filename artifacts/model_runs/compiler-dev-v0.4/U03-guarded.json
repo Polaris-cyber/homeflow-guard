@@ -1,0 +1,26 @@
+{
+  "case_id": "U03",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"晚上七点开灯\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"at\": \"19:00:00\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"state\",\n      \"entity_id\": \"climate.living_ac\",\n      \"state\": \"on\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_on\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.4",
+    "schema_version": "automation-ir-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:52:28.212232Z",
+    "latency_ms": 2181,
+    "raw_output_sha256": "6b23cdf8627b9853afb931fbea2678bcbe14a603d3c901d78b4c3bf81642269d",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1871,
+    "output_tokens": 131,
+    "error": null
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "case_id": "S02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"日落时关闭客厅窗帘\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"sun\",\n      \"event\": \"sunset\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"cover.living_curtain\",\n      \"service\": \"cover.close_cover\",\n      \"parameters\": {}\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.11-repair-context",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:49:06.577287Z",
+    "latency_ms": 1773,
+    "raw_output_sha256": "b3cd8eb7fb1dc1fdc3d1e46d26f905b7a03d605488c6b7b0f4df2f131b0fa30c",
+    "attempt_output_sha256": [
+      "b3cd8eb7fb1dc1fdc3d1e46d26f905b7a03d605488c6b7b0f4df2f131b0fa30c"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2421,
+    "output_tokens": 101,
+    "error": null
+  }
+}

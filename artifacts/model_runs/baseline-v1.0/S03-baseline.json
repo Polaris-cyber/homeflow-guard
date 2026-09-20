@@ -1,0 +1,29 @@
+{
+  "case_id": "S03",
+  "pipeline": "baseline",
+  "raw_output": "alias: 玄关有人时开灯\ndescription: 当玄关检测到有人时，自动打开玄关灯。\ntriggers:\n  - platform: state\n    entity_id: binary_sensor.hall_motion\n    to: 'on'\nconditions: []\nactions:\n  - service: light.turn_on\n    target:\n      entity_id: light.hall\nmode: single",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:42:06.535139Z",
+    "latency_ms": 1468,
+    "raw_output_sha256": "45219bb753b4ec2aa78c4a30bc469353c9d33b556dd25a6a0c28a71006f36ede",
+    "attempt_output_sha256": [
+      "45219bb753b4ec2aa78c4a30bc469353c9d33b556dd25a6a0c28a71006f36ede"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1132,
+    "output_tokens": 85,
+    "error": null
+  }
+}

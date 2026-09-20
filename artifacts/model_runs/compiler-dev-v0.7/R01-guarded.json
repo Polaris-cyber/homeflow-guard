@@ -1,0 +1,26 @@
+{
+  "case_id": "R01",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"客厅主灯矛盾操作\", \"triggers\": [], \"conditions\": [], \"actions\": [], \"clarification_questions\": [\"晚上七点同时打开和关闭客厅主灯的需求存在矛盾，无法执行。请明确是打开还是关闭客厅主灯？\"], \"risk_acknowledgements\": [], \"description\": \"需求中存在矛盾操作，无法生成自动化规则。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.7",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T06:01:23.337929Z",
+    "latency_ms": 1397,
+    "raw_output_sha256": "5be7a8703cd8c48b3d7f95848c8960a90eef97b2ed159a9b9b8ad533e2385552",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2209,
+    "output_tokens": 81,
+    "error": null
+  }
+}

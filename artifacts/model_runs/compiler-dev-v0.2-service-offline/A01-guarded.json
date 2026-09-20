@@ -1,0 +1,25 @@
+{
+  "case_id": "A01",
+  "pipeline": "guarded",
+  "raw_output": "",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": null,
+    "ollama_version": null,
+    "prompt_version": "compiler-dev-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:41:58.630990Z",
+    "latency_ms": 4078,
+    "raw_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": null,
+    "output_tokens": null,
+    "error": "Ollama 调用失败：HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=11434): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))"
+  }
+}

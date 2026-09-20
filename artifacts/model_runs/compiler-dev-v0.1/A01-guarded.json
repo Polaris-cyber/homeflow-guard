@@ -1,0 +1,25 @@
+{
+  "case_id": "A01",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"晚上开灯\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"at\": \"21:00:00\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_on\"\n    },\n    {\n      \"entity_id\": \"light.bedroom_main\",\n      \"service\": \"light.turn_on\"\n    },\n    {\n      \"entity_id\": \"light.hall\",\n      \"service\": \"light.turn_on\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-17T18:28:08.302984Z",
+    "latency_ms": 2241,
+    "raw_output_sha256": "0981dc26fb24480cbde820ec043befe0999fafca315f935256b0920db0e8a265",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1396,
+    "output_tokens": 139,
+    "error": null
+  }
+}

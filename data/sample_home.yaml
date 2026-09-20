@@ -1,0 +1,116 @@
+inventory_id: sample_apartment_v1
+title: 公开虚拟家庭（两室一厅）
+provenance: synthetic
+devices:
+  - entity_id: binary_sensor.hall_motion
+    domain: binary_sensor
+    area: 玄关
+    display_name: 玄关人体传感器
+    capabilities: [motion]
+    allowed_services: []
+    parameter_ranges: {}
+    sensitivity: normal
+  - entity_id: binary_sensor.bedroom_motion
+    domain: binary_sensor
+    area: 卧室
+    display_name: 卧室人体传感器
+    capabilities: [motion]
+    allowed_services: []
+    parameter_ranges: {}
+    sensitivity: normal
+  - entity_id: binary_sensor.living_window
+    domain: binary_sensor
+    area: 客厅
+    display_name: 客厅窗户传感器
+    capabilities: [opening]
+    allowed_services: []
+    parameter_ranges: {}
+    sensitivity: normal
+  - entity_id: binary_sensor.bedroom_window
+    domain: binary_sensor
+    area: 卧室
+    display_name: 卧室窗户传感器
+    capabilities: [opening]
+    allowed_services: []
+    parameter_ranges: {}
+    sensitivity: normal
+  - entity_id: light.living_main
+    domain: light
+    area: 客厅
+    display_name: 客厅主灯
+    capabilities: [power, brightness]
+    allowed_services: [light.turn_on, light.turn_off, light.toggle]
+    parameter_ranges:
+      brightness: [1, 255]
+    sensitivity: normal
+  - entity_id: light.bedroom_main
+    domain: light
+    area: 卧室
+    display_name: 卧室主灯
+    capabilities: [power, brightness]
+    allowed_services: [light.turn_on, light.turn_off]
+    parameter_ranges:
+      brightness: [1, 255]
+    sensitivity: normal
+  - entity_id: light.hall
+    domain: light
+    area: 玄关
+    display_name: 玄关灯
+    capabilities: [power, brightness]
+    allowed_services: [light.turn_on, light.turn_off]
+    parameter_ranges:
+      brightness: [1, 200]
+    sensitivity: normal
+  - entity_id: climate.living_ac
+    domain: climate
+    area: 客厅
+    display_name: 客厅空调
+    capabilities: [power, target_temperature, current_temperature]
+    allowed_services: [climate.turn_on, climate.turn_off, climate.set_temperature]
+    parameter_ranges:
+      temperature: [16, 28]
+    sensitivity: normal
+  - entity_id: climate.bedroom_ac
+    domain: climate
+    area: 卧室
+    display_name: 卧室空调
+    capabilities: [power, target_temperature, current_temperature]
+    allowed_services: [climate.turn_on, climate.turn_off, climate.set_temperature]
+    parameter_ranges:
+      temperature: [16, 28]
+    sensitivity: normal
+  - entity_id: cover.living_curtain
+    domain: cover
+    area: 客厅
+    display_name: 客厅窗帘
+    capabilities: [open, close, position]
+    allowed_services: [cover.open_cover, cover.close_cover, cover.set_cover_position]
+    parameter_ranges:
+      position: [0, 100]
+    sensitivity: normal
+  - entity_id: cover.bedroom_curtain
+    domain: cover
+    area: 卧室
+    display_name: 卧室窗帘
+    capabilities: [open, close, position]
+    allowed_services: [cover.open_cover, cover.close_cover, cover.set_cover_position]
+    parameter_ranges:
+      position: [0, 100]
+    sensitivity: normal
+  - entity_id: media_player.living_speaker
+    domain: media_player
+    area: 客厅
+    display_name: 客厅音箱
+    capabilities: [playback, volume, media]
+    allowed_services: [media_player.media_play, media_player.media_pause, media_player.volume_set, media_player.play_media]
+    parameter_ranges:
+      volume_level: [0, 0.8]
+    sensitivity: normal
+  - entity_id: lock.front_door
+    domain: lock
+    area: 玄关
+    display_name: 入户门锁
+    capabilities: [lock, unlock]
+    allowed_services: [lock.lock, lock.unlock]
+    parameter_ranges: {}
+    sensitivity: sensitive

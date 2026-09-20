@@ -1,0 +1,25 @@
+{
+  "case_id": "S01",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"每天晚上七点开灯\", \"triggers\": [{\"trigger_type\": \"time\", \"at\": \"21:00:00\"}], \"actions\": [{\"entity_id\": \"light.living_main\", \"service\": \"light.turn_on\", \"parameters\": {\"brightness\": 180}}], \"description\": \"每天晚上七点打开客厅主灯，亮度设置为180。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:44:46.596651Z",
+    "latency_ms": 50029,
+    "raw_output_sha256": "284ca052b6316338f59f0196d17281732277dc85aee51ae49cd67dea40f4ae89",
+    "retries": 1,
+    "parse_status": "success",
+    "input_tokens": 1804,
+    "output_tokens": 91,
+    "error": null
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "case_id": "U03",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"晚上七点开灯\", \"triggers\": [{\"trigger_type\": \"time\", \"at\": \"21:00:00\"}], \"actions\": [{\"entity_id\": \"light.living_main\", \"service\": \"light.turn_on\"}], \"conditions\": [], \"risk_acknowledgements\": []}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:45:55.325037Z",
+    "latency_ms": 1436,
+    "raw_output_sha256": "e78866ac7b05e4efed86c0ffdc6444e0636a33baeebbaff5df58246fcbd244e5",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1732,
+    "output_tokens": 70,
+    "error": null
+  }
+}

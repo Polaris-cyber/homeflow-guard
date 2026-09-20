@@ -1,0 +1,26 @@
+{
+  "case_id": "U01",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"厨房风扇定时开启\", \"triggers\": [{\"trigger_type\": \"time\", \"time\": {\"at\": \"20:00:00\"}}], \"conditions\": [], \"actions\": [{\"entity_id\": \"fan.kitchen_fan\", \"service\": \"fan.turn_on\", \"parameters\": {}}], \"clarification_questions\": [\"厨房风扇对应的 entity_id 是否为 `fan.kitchen_fan`？\"], \"risk_acknowledgements\": []}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.5",
+    "schema_version": "automation-ir-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:56:41.502414Z",
+    "latency_ms": 2963,
+    "raw_output_sha256": "695ddb15738311e6bfc7cc4e93eac34002bc4eeba3e2d1165bc192ea9cafffd5",
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 2206,
+    "output_tokens": 100,
+    "error": "2 validation errors for AutomationIR\ntriggers.0.time.at\n  Field required [type=missing, input_value={'trigger_type': 'time', ...me': {'at': '20:00:00'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\ntriggers.0.time.time\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'at': '20:00:00'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "case_id": "A02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"温度过低时开启空调\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"请明确说明触发空调开启的温度阈值（例如：温度低于多少度时开启空调）。\",\n    \"请明确说明需要开启空调的房间（例如：客厅或卧室）。\",\n    \"是否需要设置空调的目标温度？如果是，请提供具体温度值。\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.6",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:58:54.925685Z",
+    "latency_ms": 1693,
+    "raw_output_sha256": "7a0ef892dce4e386018d21d70cd8cffee8e85d47835eea3fc7bbc8616aafc97a",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1982,
+    "output_tokens": 107,
+    "error": null
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "case_id": "U02",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"车库门触发关闭客厅灯\", \"triggers\": [{\"trigger_type\": \"state\", \"entity_id\": \"binary_sensor.garage_door\", \"to_state\": \"on\"}], \"actions\": [{\"entity_id\": \"light.living_main\", \"service\": \"light.turn_off\"}], \"description\": \"当车库门传感器检测到门打开时，关闭客厅主灯。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:45:53.782480Z",
+    "latency_ms": 1511,
+    "raw_output_sha256": "7a7148f8ea6d82d425d8a68dd51ac40c9befa275ebf97a72f07aecf9ffee3efb",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1731,
+    "output_tokens": 85,
+    "error": null
+  }
+}

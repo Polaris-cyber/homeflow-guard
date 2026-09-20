@@ -1,0 +1,29 @@
+{
+  "case_id": "U01",
+  "pipeline": "baseline",
+  "raw_output": "alias: 晚上八点打开厨房风扇\ndescription: 每天晚上八点自动打开厨房风扇\ntriggers:\n  - platform: time\n    at: \"20:00\"\nconditions: []\nactions:\n  - service: fan.turn_on\n    target:\n      entity_id: fan.kitchen_fan\nmode: single",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T06:07:46.152856Z",
+    "latency_ms": 1335,
+    "raw_output_sha256": "c69e4a104b1e69e9031d25fbd3e6f11daa18830bd7c87502717f5518e280a067",
+    "attempt_output_sha256": [
+      "c69e4a104b1e69e9031d25fbd3e6f11daa18830bd7c87502717f5518e280a067"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1064,
+    "output_tokens": 80,
+    "error": null
+  }
+}

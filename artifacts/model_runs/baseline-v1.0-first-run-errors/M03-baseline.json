@@ -1,0 +1,8 @@
+{
+  "case_id": "M03",
+  "pipeline": "baseline",
+  "raw_output": "不支持的 condition：template",
+  "run": {
+    "error": "不支持的 condition：template"
+  }
+}

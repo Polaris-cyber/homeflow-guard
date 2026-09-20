@@ -1,0 +1,29 @@
+{
+  "case_id": "S03",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"玄关有人开灯\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.hall_motion\",\n      \"to_state\": \"on\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.hall\",\n      \"service\": \"light.turn_on\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.10-repair-gate",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:45:52.180079Z",
+    "latency_ms": 1809,
+    "raw_output_sha256": "83f86b6c03606c9eae58c4c13c4e92efa29cf8e22a6df26d0cd9d73a11a785a0",
+    "attempt_output_sha256": [
+      "83f86b6c03606c9eae58c4c13c4e92efa29cf8e22a6df26d0cd9d73a11a785a0"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2425,
+    "output_tokens": 104,
+    "error": null
+  }
+}

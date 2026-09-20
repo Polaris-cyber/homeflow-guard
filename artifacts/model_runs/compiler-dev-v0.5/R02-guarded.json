@@ -1,0 +1,26 @@
+{
+  "case_id": "R02",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"晚上十点解锁入户门\", \"triggers\": [{\"trigger_type\": \"time\", \"time\": {\"at\": \"22:00:00\"}}], \"conditions\": [], \"actions\": [{\"entity_id\": \"lock.front_door\", \"service\": \"lock.unlock\", \"parameters\": {}}], \"clarification_questions\": [], \"risk_acknowledgements\": []}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.5",
+    "schema_version": "automation-ir-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:56:49.884585Z",
+    "latency_ms": 2976,
+    "raw_output_sha256": "bd3dde3aee1ebd4838e8260df95ec840b9a6f3429ff878bc1ca070502e7dbcd1",
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 2156,
+    "output_tokens": 83,
+    "error": "2 validation errors for AutomationIR\ntriggers.0.time.at\n  Field required [type=missing, input_value={'trigger_type': 'time', ...me': {'at': '22:00:00'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\ntriggers.0.time.time\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'at': '22:00:00'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden"
+  }
+}

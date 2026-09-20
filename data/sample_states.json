@@ -1,0 +1,15 @@
+{
+  "binary_sensor.hall_motion": {"state": "on", "attributes": {}},
+  "binary_sensor.bedroom_motion": {"state": "off", "attributes": {}},
+  "binary_sensor.living_window": {"state": "off", "attributes": {}},
+  "binary_sensor.bedroom_window": {"state": "off", "attributes": {}},
+  "light.living_main": {"state": "off", "attributes": {"brightness": 0}},
+  "light.bedroom_main": {"state": "off", "attributes": {"brightness": 0}},
+  "light.hall": {"state": "off", "attributes": {"brightness": 0}},
+  "climate.living_ac": {"state": "off", "attributes": {"temperature": 22, "current_temperature": 17}},
+  "climate.bedroom_ac": {"state": "off", "attributes": {"temperature": 24, "current_temperature": 27}},
+  "cover.living_curtain": {"state": "closed", "attributes": {"position": 0}},
+  "cover.bedroom_curtain": {"state": "closed", "attributes": {"position": 0}},
+  "media_player.living_speaker": {"state": "paused", "attributes": {"volume_level": 0.3}},
+  "lock.front_door": {"state": "locked", "attributes": {}}
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "A02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"太冷时开空调\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"请明确说明‘太冷’的具体温度阈值（例如低于多少摄氏度）。\",\n    \"请说明需要开启空调的房间（例如客厅或卧室）。\",\n    \"是否需要设定空调的目标温度？\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "太冷时开空调",
+    "description": "",
+    "triggers": [],
+    "conditions": [],
+    "actions": [],
+    "clarification_questions": [
+      "请明确说明‘太冷’的具体温度阈值（例如低于多少摄氏度）。",
+      "请说明需要开启空调的房间（例如客厅或卧室）。",
+      "是否需要设定空调的目标温度？"
+    ],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.12-threshold-schema",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:52:34.227592Z",
+    "latency_ms": 1707,
+    "raw_output_sha256": "858186d48593ce2c833add8620081622e61ed4834d14f9ca3cdc7b7312067108",
+    "attempt_output_sha256": [
+      "858186d48593ce2c833add8620081622e61ed4834d14f9ca3cdc7b7312067108"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2436,
+    "output_tokens": 95,
+    "error": null
+  }
+}

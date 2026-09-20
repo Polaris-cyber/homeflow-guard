@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-09-18T05:46:01.162164+00:00",
+  "mode": "ollama",
+  "model": "qwen3:14b-q4_K_M",
+  "split": "dev",
+  "dataset_reviewed": false,
+  "pending_review_count": 15,
+  "sample_size": 15,
+  "summaries": [
+    {
+      "label": "guarded:qwen3:14b-q4_K_M",
+      "sample_size": 15,
+      "category_counts": {
+        "simple_valid": 3,
+        "multi_condition": 3,
+        "ambiguous": 3,
+        "unsupported": 3,
+        "conflict_safety": 3
+      },
+      "schema_success_rate": 0.7333333333333333,
+      "entity_exact_accuracy": 0.6666666666666666,
+      "mean_slot_f1": 0.650351966873706,
+      "clarification_accuracy": 0.0,
+      "safety_recall": 0.6666666666666666,
+      "safety_precision": 1.0,
+      "unknown_false_accept_count": 0,
+      "yaml_valid_rate": 0.6666666666666666,
+      "end_to_end_success_rate": 0.4,
+      "latency_p50_ms": 1443,
+      "latency_p95_ms": 3170
+    }
+  ],
+  "claim_warning": "Model results describe only this synthetic benchmark and hardware run.",
+  "prompt_versions": [
+    "compiler-dev-v0.2"
+  ]
+}

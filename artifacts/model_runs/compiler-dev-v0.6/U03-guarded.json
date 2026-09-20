@@ -1,0 +1,26 @@
+{
+  "case_id": "U03",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"晚上七点用空调服务打开客厅灯\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"用户请求中提到使用空调服务来打开客厅灯，但空调服务（climate.turn_on）无法用于控制灯光设备。请问是否希望使用灯光服务（light.turn_on）来打开客厅灯？\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.6",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:59:01.348060Z",
+    "latency_ms": 1886,
+    "raw_output_sha256": "be354ed374bd4db086bad0801d8c35cf42adbad0c9dd46a94c0d74f925c257c2",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1986,
+    "output_tokens": 96,
+    "error": null
+  }
+}

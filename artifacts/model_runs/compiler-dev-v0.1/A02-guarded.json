@@ -1,0 +1,25 @@
+{
+  "case_id": "A02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"温度过低时开启空调\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"numeric_state\",\n      \"entity_id\": \"climate.living_ac\",\n      \"attribute\": \"temperature\",\n      \"event\": \"sunrise\",\n      \"offset\": null\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"climate.living_ac\",\n      \"service\": \"climate.turn_on\"\n    }\n  ],\n  \"description\": \"当温度过低时，自动开启客厅空调。\",\n  \"clarification_questions\": [\n    \"请提供具体的温度阈值，例如'低于18℃'。\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-17T18:28:10.550572Z",
+    "latency_ms": 2461,
+    "raw_output_sha256": "4c4e6b3459dea4c5f4ae12c90395c70893638f0a85a4b388a78c6bb6309c5c8d",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1397,
+    "output_tokens": 151,
+    "error": null
+  }
+}

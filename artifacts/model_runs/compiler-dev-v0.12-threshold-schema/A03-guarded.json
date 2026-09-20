@@ -1,0 +1,41 @@
+{
+  "case_id": "A03",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"回家后播放音乐\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"回家后如何判断？是否需要使用特定设备（如门锁、人体传感器）来确认回家？\",\n    \"播放什么音乐？是否需要指定媒体内容或来源？\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "回家后播放音乐",
+    "description": "",
+    "triggers": [],
+    "conditions": [],
+    "actions": [],
+    "clarification_questions": [
+      "回家后如何判断？是否需要使用特定设备（如门锁、人体传感器）来确认回家？",
+      "播放什么音乐？是否需要指定媒体内容或来源？"
+    ],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.12-threshold-schema",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:52:35.955874Z",
+    "latency_ms": 1563,
+    "raw_output_sha256": "eb4b52d89de1fe198d99896c51c265837b128ae5cc6d5c6cf3fe313ce93d6dff",
+    "attempt_output_sha256": [
+      "eb4b52d89de1fe198d99896c51c265837b128ae5cc6d5c6cf3fe313ce93d6dff"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2436,
+    "output_tokens": 86,
+    "error": null
+  }
+}

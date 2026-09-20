@@ -1,0 +1,25 @@
+{
+  "case_id": "A03",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"回家后播放音乐\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"回家的判断依据是什么？例如：入户门锁的状态、人体传感器的触发等。\",\n    \"需要播放什么内容？例如：特定的音乐、媒体 URL 或播放列表。\",\n    \"播放音乐的设备是哪个？例如：客厅音箱、卧室音箱等。\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:48:39.100429Z",
+    "latency_ms": 1774,
+    "raw_output_sha256": "69c6adf50fe3051ccd2216fbb89bfb397653c7d3e6f549941d590b3b81eb351b",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1867,
+    "output_tokens": 105,
+    "error": null
+  }
+}

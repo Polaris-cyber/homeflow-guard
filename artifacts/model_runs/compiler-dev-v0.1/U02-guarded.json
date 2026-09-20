@@ -1,0 +1,25 @@
+{
+  "case_id": "U02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"车库门传感器触发关闭客厅灯\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.hall_motion\",\n      \"to_state\": \"on\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_off\"\n    }\n  ],\n  \"description\": \"当玄关人体传感器检测到有人时，关闭客厅主灯。\",\n  \"clarification_questions\": [\n    \"用户提到的是车库门传感器，但 inventory 中没有车库门传感器的实体。是否应使用玄关人体传感器作为触发条件？\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-17T18:28:17.015951Z",
+    "latency_ms": 2428,
+    "raw_output_sha256": "89a9638b8e1490f6bc665331bb887bbd1317ea4f579f9a181fb0cf3063356d4d",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1400,
+    "output_tokens": 155,
+    "error": null
+  }
+}

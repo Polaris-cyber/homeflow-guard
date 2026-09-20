@@ -1,0 +1,30 @@
+{
+  "case_id": "M03",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"日落时空调调节\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"sun\",\n      \"event\": \"sunset\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"numeric_state\",\n      \"entity_id\": \"climate.living_ac\",\n      \"attribute\": \"current_temperature\"\n    },\n    {\n      \"condition_type\": \"state\",\n      \"entity_id\": \"binary_sensor.living_window\",\n      \"state\": \"off\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"climate.living_ac\",\n      \"service\": \"climate.set_temperature\",\n      \"parameters\": {\n        \"temperature\": 22\n      }\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.10-repair-gate",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:45:59.980418Z",
+    "latency_ms": 5380,
+    "raw_output_sha256": "145dadc5c4138ab6994cf5810c0c4f64883926b890f99f0f7202df89bb42ed70",
+    "attempt_output_sha256": [
+      "145dadc5c4138ab6994cf5810c0c4f64883926b890f99f0f7202df89bb42ed70",
+      "145dadc5c4138ab6994cf5810c0c4f64883926b890f99f0f7202df89bb42ed70"
+    ],
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 2574,
+    "output_tokens": 173,
+    "error": "1 validation error for AutomationIR\nconditions.0.numeric_state\n  Value error, 数值条件至少需要 above 或 below [type=value_error, input_value={'condition_type': 'numer...: 'current_temperature'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/value_error"
+  }
+}

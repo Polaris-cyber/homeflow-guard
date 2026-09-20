@@ -1,0 +1,69 @@
+{
+  "case_id": "M01",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"玄关有人且客厅窗关闭时开灯并调空调\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.hall_motion\",\n      \"to_state\": \"on\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"time\",\n      \"after\": \"19:00:00\"\n    },\n    {\n      \"condition_type\": \"state\",\n      \"entity_id\": \"binary_sensor.living_window\",\n      \"state\": \"off\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_on\"\n    },\n    {\n      \"entity_id\": \"climate.living_ac\",\n      \"service\": \"climate.set_temperature\",\n      \"parameters\": {\n        \"temperature\": 22\n      }\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "玄关有人且客厅窗关闭时开灯并调空调",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "state",
+        "entity_id": "binary_sensor.hall_motion",
+        "from_state": null,
+        "to_state": "on"
+      }
+    ],
+    "conditions": [
+      {
+        "condition_type": "time",
+        "after": "19:00:00",
+        "before": null
+      },
+      {
+        "condition_type": "state",
+        "entity_id": "binary_sensor.living_window",
+        "state": "off"
+      }
+    ],
+    "actions": [
+      {
+        "entity_id": "light.living_main",
+        "service": "light.turn_on",
+        "parameters": {}
+      },
+      {
+        "entity_id": "climate.living_ac",
+        "service": "climate.set_temperature",
+        "parameters": {
+          "temperature": 22
+        }
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.12-threshold-schema",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:52:23.854795Z",
+    "latency_ms": 3335,
+    "raw_output_sha256": "9ebfdf8c108deef59b38bbaccbd2ec3f56541e4742e73e22fcb0273b5cb6070d",
+    "attempt_output_sha256": [
+      "9ebfdf8c108deef59b38bbaccbd2ec3f56541e4742e73e22fcb0273b5cb6070d"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2458,
+    "output_tokens": 211,
+    "error": null
+  }
+}

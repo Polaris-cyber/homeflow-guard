@@ -1,0 +1,25 @@
+{
+  "case_id": "A02",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"太冷时开空调\", \"triggers\": [], \"actions\": [], \"conditions\": [], \"risk_acknowledgements\": []}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:45:49.502215Z",
+    "latency_ms": 1387,
+    "raw_output_sha256": "6ea470afe715f73a9de6df9cdea291c7ef4d4f306e30ef37fc866b26998f609a",
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 1827,
+    "output_tokens": 32,
+    "error": "1 validation error for AutomationIR\n  Value error, 必须提供触发器，或明确列出需要澄清的问题 [type=value_error, input_value={'name': '太冷时开空...k_acknowledgements': []}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/value_error"
+  }
+}

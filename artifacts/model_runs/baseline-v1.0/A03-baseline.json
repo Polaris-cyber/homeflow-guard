@@ -1,0 +1,29 @@
+{
+  "case_id": "A03",
+  "pipeline": "baseline",
+  "raw_output": "alias: 回家后播放音乐\ndescription: 当检测到有人回家时，自动播放音乐\ntriggers:\n  - platform: state\n    entity_id: lock.front_door\n    to: 'unlocked'\nconditions: []\nactions:\n  - service: media_player.play_media\n    target:\n      entity_id: media_player.living_speaker\n    data:\n      media_content_id: 'https://www.youtube.com/watch?v=5qap5zrrfgY'\n      media_content_type: 'music'\nmode: single",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:42:20.111545Z",
+    "latency_ms": 2151,
+    "raw_output_sha256": "4aa347b5e946cd4dae674f09e3f370e5db532fde129969dade096951800d2d51",
+    "attempt_output_sha256": [
+      "4aa347b5e946cd4dae674f09e3f370e5db532fde129969dade096951800d2d51"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1127,
+    "output_tokens": 117,
+    "error": null
+  }
+}

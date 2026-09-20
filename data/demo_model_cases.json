@@ -1,0 +1,461 @@
+[
+  {
+    "id": "S01",
+    "category": "simple_valid",
+    "user_request": "每天晚上七点打开客厅主灯，亮度180。",
+    "ir": {
+      "name": "每天晚上七点打开客厅主灯",
+      "description": "",
+      "triggers": [
+        {
+          "trigger_type": "time",
+          "at": "19:00:00"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "entity_id": "light.living_main",
+          "service": "light.turn_on",
+          "parameters": {
+            "brightness": 180
+          }
+        }
+      ],
+      "clarification_questions": [],
+      "risk_acknowledgements": []
+    },
+    "validation_issues": [],
+    "model_run": {
+      "model": "qwen3:14b-q4_K_M",
+      "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "ollama_version": "0.34.1",
+      "prompt_version": "compiler-dev-v0.8",
+      "schema_version": "automation-ir-v0.3",
+      "generation_config": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 8192,
+        "think": false
+      },
+      "requested_at": "2026-09-18T06:04:05.169755Z",
+      "latency_ms": 2006,
+      "raw_output_sha256": "22142f7fece7d28349efb6ac21bdcfb644fdf3d8f4dda9baa939e75a86efc58b",
+      "attempt_output_sha256": [
+        "22142f7fece7d28349efb6ac21bdcfb644fdf3d8f4dda9baa939e75a86efc58b"
+      ],
+      "retries": 0,
+      "parse_status": "success",
+      "input_tokens": 2212,
+      "output_tokens": 118,
+      "error": null
+    },
+    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+  },
+  {
+    "id": "S02",
+    "category": "simple_valid",
+    "user_request": "日落时关闭客厅窗帘。",
+    "ir": {
+      "name": "日落时关闭客厅窗帘",
+      "description": "",
+      "triggers": [
+        {
+          "trigger_type": "sun",
+          "event": "sunset",
+          "offset": null
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "entity_id": "cover.living_curtain",
+          "service": "cover.close_cover",
+          "parameters": {}
+        }
+      ],
+      "clarification_questions": [],
+      "risk_acknowledgements": []
+    },
+    "validation_issues": [],
+    "model_run": {
+      "model": "qwen3:14b-q4_K_M",
+      "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "ollama_version": "0.34.1",
+      "prompt_version": "compiler-dev-v0.8",
+      "schema_version": "automation-ir-v0.3",
+      "generation_config": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 8192,
+        "think": false
+      },
+      "requested_at": "2026-09-18T06:04:07.184412Z",
+      "latency_ms": 1704,
+      "raw_output_sha256": "b3cd8eb7fb1dc1fdc3d1e46d26f905b7a03d605488c6b7b0f4df2f131b0fa30c",
+      "attempt_output_sha256": [
+        "b3cd8eb7fb1dc1fdc3d1e46d26f905b7a03d605488c6b7b0f4df2f131b0fa30c"
+      ],
+      "retries": 0,
+      "parse_status": "success",
+      "input_tokens": 2205,
+      "output_tokens": 101,
+      "error": null
+    },
+    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+  },
+  {
+    "id": "M01",
+    "category": "multi_condition",
+    "user_request": "晚上七点后玄关检测到有人，且客厅窗户关闭时，打开客厅灯并把空调设为22度。",
+    "ir": {
+      "name": "玄关有人且客厅窗关闭时开灯并调空调",
+      "description": "",
+      "triggers": [
+        {
+          "trigger_type": "state",
+          "entity_id": "binary_sensor.hall_motion",
+          "from_state": null,
+          "to_state": "on"
+        }
+      ],
+      "conditions": [
+        {
+          "condition_type": "time",
+          "after": "19:00:00",
+          "before": null
+        },
+        {
+          "condition_type": "state",
+          "entity_id": "binary_sensor.living_window",
+          "state": "off"
+        }
+      ],
+      "actions": [
+        {
+          "entity_id": "light.living_main",
+          "service": "light.turn_on",
+          "parameters": {}
+        },
+        {
+          "entity_id": "climate.living_ac",
+          "service": "climate.set_temperature",
+          "parameters": {
+            "temperature": 22
+          }
+        }
+      ],
+      "clarification_questions": [],
+      "risk_acknowledgements": []
+    },
+    "validation_issues": [],
+    "model_run": {
+      "model": "qwen3:14b-q4_K_M",
+      "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "ollama_version": "0.34.1",
+      "prompt_version": "compiler-dev-v0.8",
+      "schema_version": "automation-ir-v0.3",
+      "generation_config": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 8192,
+        "think": false
+      },
+      "requested_at": "2026-09-18T06:04:10.903965Z",
+      "latency_ms": 3052,
+      "raw_output_sha256": "9ebfdf8c108deef59b38bbaccbd2ec3f56541e4742e73e22fcb0273b5cb6070d",
+      "attempt_output_sha256": [
+        "9ebfdf8c108deef59b38bbaccbd2ec3f56541e4742e73e22fcb0273b5cb6070d"
+      ],
+      "retries": 0,
+      "parse_status": "success",
+      "input_tokens": 2226,
+      "output_tokens": 211,
+      "error": null
+    },
+    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+  },
+  {
+    "id": "M02",
+    "category": "multi_condition",
+    "user_request": "早上七点，如果卧室窗户关闭，就打开卧室窗帘并关闭卧室灯。",
+    "ir": {
+      "name": "早上七点卧室自动化",
+      "description": "",
+      "triggers": [
+        {
+          "trigger_type": "time",
+          "at": "07:00:00"
+        }
+      ],
+      "conditions": [
+        {
+          "condition_type": "state",
+          "entity_id": "binary_sensor.bedroom_window",
+          "state": "off"
+        }
+      ],
+      "actions": [
+        {
+          "entity_id": "cover.bedroom_curtain",
+          "service": "cover.open_cover",
+          "parameters": {}
+        },
+        {
+          "entity_id": "light.bedroom_main",
+          "service": "light.turn_off",
+          "parameters": {}
+        }
+      ],
+      "clarification_questions": [],
+      "risk_acknowledgements": []
+    },
+    "validation_issues": [],
+    "model_run": {
+      "model": "qwen3:14b-q4_K_M",
+      "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "ollama_version": "0.34.1",
+      "prompt_version": "compiler-dev-v0.8",
+      "schema_version": "automation-ir-v0.3",
+      "generation_config": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 8192,
+        "think": false
+      },
+      "requested_at": "2026-09-18T06:04:13.998877Z",
+      "latency_ms": 2531,
+      "raw_output_sha256": "8019f7f980a570cc7d1d986f740beaeb61c1e13da4810c203f321df3c3dc38d8",
+      "attempt_output_sha256": [
+        "8019f7f980a570cc7d1d986f740beaeb61c1e13da4810c203f321df3c3dc38d8"
+      ],
+      "retries": 0,
+      "parse_status": "success",
+      "input_tokens": 2216,
+      "output_tokens": 158,
+      "error": null
+    },
+    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+  },
+  {
+    "id": "A01",
+    "category": "ambiguous",
+    "user_request": "晚上帮我开灯。",
+    "ir": {
+      "name": "开灯",
+      "description": "需要更多信息来确定开灯的时间和具体房间。",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "clarification_questions": [
+        "您希望在晚上什么时间开灯？",
+        "您希望开哪个房间的灯？"
+      ],
+      "risk_acknowledgements": []
+    },
+    "validation_issues": [
+      {
+        "code": "CLARIFICATION_REQUIRED",
+        "severity": "blocking",
+        "path": "clarification_questions",
+        "message": "需求信息不足，请先回答澄清问题",
+        "requires_confirmation": false,
+        "acknowledgement_key": null
+      }
+    ],
+    "model_run": {
+      "model": "qwen3:14b-q4_K_M",
+      "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "ollama_version": "0.34.1",
+      "prompt_version": "compiler-dev-v0.8",
+      "schema_version": "automation-ir-v0.3",
+      "generation_config": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 8192,
+        "think": false
+      },
+      "requested_at": "2026-09-18T06:04:21.806168Z",
+      "latency_ms": 1477,
+      "raw_output_sha256": "1cf18805d3a6591801e2d78a3644f9269fdcef6f627425ed23cd76f45a7c710d",
+      "attempt_output_sha256": [
+        "1cf18805d3a6591801e2d78a3644f9269fdcef6f627425ed23cd76f45a7c710d"
+      ],
+      "retries": 0,
+      "parse_status": "success",
+      "input_tokens": 2203,
+      "output_tokens": 70,
+      "error": null
+    },
+    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+  },
+  {
+    "id": "U01",
+    "category": "unsupported",
+    "user_request": "晚上八点打开厨房风扇。",
+    "ir": {
+      "name": "厨房风扇定时开启",
+      "description": "",
+      "triggers": [
+        {
+          "trigger_type": "time",
+          "at": "20:00:00"
+        }
+      ],
+      "conditions": [],
+      "actions": [],
+      "clarification_questions": [
+        "厨房风扇的 entity_id 未在 inventory 中找到，请提供正确的设备信息。"
+      ],
+      "risk_acknowledgements": []
+    },
+    "validation_issues": [
+      {
+        "code": "CLARIFICATION_REQUIRED",
+        "severity": "blocking",
+        "path": "clarification_questions",
+        "message": "需求信息不足，请先回答澄清问题",
+        "requires_confirmation": false,
+        "acknowledgement_key": null
+      }
+    ],
+    "model_run": {
+      "model": "qwen3:14b-q4_K_M",
+      "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "ollama_version": "0.34.1",
+      "prompt_version": "compiler-dev-v0.8",
+      "schema_version": "automation-ir-v0.3",
+      "generation_config": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 8192,
+        "think": false
+      },
+      "requested_at": "2026-09-18T06:04:26.117870Z",
+      "latency_ms": 1474,
+      "raw_output_sha256": "dfeddd64302fdceb125c37bd2fedfa9d5b1766e699f26258f8f6b6998e12250b",
+      "attempt_output_sha256": [
+        "dfeddd64302fdceb125c37bd2fedfa9d5b1766e699f26258f8f6b6998e12250b"
+      ],
+      "retries": 0,
+      "parse_status": "success",
+      "input_tokens": 2205,
+      "output_tokens": 75,
+      "error": null
+    },
+    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+  },
+  {
+    "id": "R01",
+    "category": "conflict_safety",
+    "user_request": "晚上七点同时打开和关闭客厅主灯。",
+    "ir": {
+      "name": "客厅主灯矛盾操作",
+      "description": "需求中存在矛盾操作，无法生成自动化规则。",
+      "triggers": [],
+      "conditions": [],
+      "actions": [],
+      "clarification_questions": [
+        "晚上七点同时打开和关闭客厅主灯的需求存在矛盾，无法执行。请明确是打开还是关闭客厅主灯？"
+      ],
+      "risk_acknowledgements": []
+    },
+    "validation_issues": [
+      {
+        "code": "CLARIFICATION_REQUIRED",
+        "severity": "blocking",
+        "path": "clarification_questions",
+        "message": "需求信息不足，请先回答澄清问题",
+        "requires_confirmation": false,
+        "acknowledgement_key": null
+      }
+    ],
+    "model_run": {
+      "model": "qwen3:14b-q4_K_M",
+      "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "ollama_version": "0.34.1",
+      "prompt_version": "compiler-dev-v0.8",
+      "schema_version": "automation-ir-v0.3",
+      "generation_config": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 8192,
+        "think": false
+      },
+      "requested_at": "2026-09-18T06:04:31.656090Z",
+      "latency_ms": 1557,
+      "raw_output_sha256": "5be7a8703cd8c48b3d7f95848c8960a90eef97b2ed159a9b9b8ad533e2385552",
+      "attempt_output_sha256": [
+        "5be7a8703cd8c48b3d7f95848c8960a90eef97b2ed159a9b9b8ad533e2385552"
+      ],
+      "retries": 0,
+      "parse_status": "success",
+      "input_tokens": 2209,
+      "output_tokens": 81,
+      "error": null
+    },
+    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+  },
+  {
+    "id": "R03",
+    "category": "conflict_safety",
+    "user_request": "客厅主灯状态变成开时切换这盏灯。",
+    "ir": {
+      "name": "客厅主灯状态切换",
+      "description": "",
+      "triggers": [
+        {
+          "trigger_type": "state",
+          "entity_id": "light.living_main",
+          "from_state": null,
+          "to_state": "on"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "entity_id": "light.living_main",
+          "service": "light.toggle",
+          "parameters": {}
+        }
+      ],
+      "clarification_questions": [],
+      "risk_acknowledgements": []
+    },
+    "validation_issues": [
+      {
+        "code": "SELF_TRIGGER_LOOP",
+        "severity": "blocking",
+        "path": "actions[0]",
+        "message": "light.living_main 同时作为触发设备并执行 toggle，存在重复触发风险",
+        "requires_confirmation": false,
+        "acknowledgement_key": null
+      }
+    ],
+    "model_run": {
+      "model": "qwen3:14b-q4_K_M",
+      "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "ollama_version": "0.34.1",
+      "prompt_version": "compiler-dev-v0.8",
+      "schema_version": "automation-ir-v0.3",
+      "generation_config": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 8192,
+        "think": false
+      },
+      "requested_at": "2026-09-18T06:04:34.785825Z",
+      "latency_ms": 1916,
+      "raw_output_sha256": "40e7fd9839e71b8a14e1fffa09bbed1d6ef71010b086bb472c348a8758fc99ea",
+      "attempt_output_sha256": [
+        "40e7fd9839e71b8a14e1fffa09bbed1d6ef71010b086bb472c348a8758fc99ea"
+      ],
+      "retries": 0,
+      "parse_status": "success",
+      "input_tokens": 2210,
+      "output_tokens": 108,
+      "error": null
+    },
+    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+  }
+]

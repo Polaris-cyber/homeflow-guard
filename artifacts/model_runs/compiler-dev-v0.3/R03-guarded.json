@@ -1,0 +1,25 @@
+{
+  "case_id": "R03",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"客厅主灯状态切换\", \"triggers\": [{\"trigger_type\": \"state\", \"entity_id\": \"light.living_main\", \"to_state\": \"on\"}], \"conditions\": [], \"actions\": [{\"entity_id\": \"light.living_main\", \"service\": \"light.toggle\"}], \"clarification_questions\": [], \"risk_acknowledgements\": []}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:48:51.567954Z",
+    "latency_ms": 1521,
+    "raw_output_sha256": "a3d5e739f8239586ae00a61b55db8809450186f4a464fe576221da899e467219",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1873,
+    "output_tokens": 79,
+    "error": null
+  }
+}

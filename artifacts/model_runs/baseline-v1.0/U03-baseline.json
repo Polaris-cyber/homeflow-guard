@@ -1,0 +1,30 @@
+{
+  "case_id": "U03",
+  "pipeline": "baseline",
+  "raw_output": "alias: 晚上七点用空调服务打开客厅灯\ndescription: 每天晚上七点，当客厅空调开启时，打开客厅主灯\ntriggers:\n  - platform: time\n    at: \"19:00\"\nconditions:\n  - condition: device\n    device_id: climate.living_ac\n    domain: climate\n    entity_id: climate.living_ac\n    state: 'on'\nactions:\n  - service: light.turn_on\n    target:\n      entity_id: light.living_main\nmode: single",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:42:25.604502Z",
+    "latency_ms": 2226,
+    "raw_output_sha256": "3268c15f139671868942baa997a64bb89dc97f2daabf6241bb9b198557b09e3a",
+    "attempt_output_sha256": [
+      "3268c15f139671868942baa997a64bb89dc97f2daabf6241bb9b198557b09e3a"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1131,
+    "output_tokens": 123,
+    "error": null,
+    "conversion_error": "不支持的 condition：device"
+  }
+}

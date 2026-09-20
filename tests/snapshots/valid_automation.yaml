@@ -1,0 +1,22 @@
+alias: 回家开启客厅舒适模式
+description: 玄关检测到有人且窗户关闭时，开灯并将空调设为 22℃。
+triggers:
+- trigger: state
+  entity_id: binary_sensor.hall_motion
+  to: 'on'
+conditions:
+- condition: state
+  entity_id: binary_sensor.living_window
+  state: 'off'
+actions:
+- action: light.turn_on
+  target:
+    entity_id: light.living_main
+  data:
+    brightness: 180
+- action: climate.set_temperature
+  target:
+    entity_id: climate.living_ac
+  data:
+    temperature: 22
+mode: single

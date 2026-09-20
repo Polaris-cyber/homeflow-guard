@@ -1,0 +1,25 @@
+{
+  "case_id": "M02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"早上七点卧室自动化\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"event\": \"sunrise\",\n      \"offset\": \"07:00:00\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"state\",\n      \"entity_id\": \"binary_sensor.bedroom_window\",\n      \"attribute\": \"state\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"cover.bedroom_curtain\",\n      \"service\": \"cover.open_cover\"\n    },\n    {\n      \"entity_id\": \"light.bedroom_main\",\n      \"service\": \"light.turn_off\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": [],\n  \"description\": \"早上七点，如果卧室窗户关闭，就打开卧室窗帘并关闭卧室灯。\"\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:48:29.651894Z",
+    "latency_ms": 3189,
+    "raw_output_sha256": "6848e45992993a5d83ac43f3c04da06ab5297418245f10b318767c368df9a4fb",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1879,
+    "output_tokens": 190,
+    "error": null
+  }
+}

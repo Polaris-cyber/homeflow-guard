@@ -1,0 +1,26 @@
+{
+  "case_id": "U02",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"车库门传感器触发的灯光控制\", \"triggers\": [{\"trigger_type\": \"state\", \"entity_id\": \"binary_sensor.garage_door\", \"to_state\": \"on\"}], \"conditions\": [], \"actions\": [{\"entity_id\": \"light.living_main\", \"service\": \"light.turn_off\", \"parameters\": {}}], \"clarification_questions\": [\"inventory.devices 中没有车库门传感器，请确认其 entity_id 是否正确。\"], \"risk_acknowledgements\": [], \"description\": \"当车库门传感器检测到门打开时，关闭客厅主灯。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.6",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:58:59.575326Z",
+    "latency_ms": 1745,
+    "raw_output_sha256": "8116dd5cd1b4b6736bce3896e650831e8bac6c1c0483e88c055488fd72dc065a",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1985,
+    "output_tokens": 124,
+    "error": null
+  }
+}

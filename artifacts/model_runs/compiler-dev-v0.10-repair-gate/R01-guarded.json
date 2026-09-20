@@ -1,0 +1,29 @@
+{
+  "case_id": "R01",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"矛盾的灯光操作\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"用户需求中同时要求打开和关闭客厅主灯，这在逻辑上是矛盾的。请明确具体希望执行的操作（打开或关闭）以及触发条件。\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.10-repair-gate",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:46:20.539986Z",
+    "latency_ms": 1557,
+    "raw_output_sha256": "9542515f288ebfc630936a18cb778ae9c8561b84d533dac81954cd24c78f52f4",
+    "attempt_output_sha256": [
+      "9542515f288ebfc630936a18cb778ae9c8561b84d533dac81954cd24c78f52f4"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2425,
+    "output_tokens": 84,
+    "error": null
+  }
+}

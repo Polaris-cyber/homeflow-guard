@@ -1,0 +1,30 @@
+{
+  "case_id": "M03",
+  "pipeline": "baseline",
+  "raw_output": "alias: 日落时调节客厅空调温度\ndescription: 日落时如果客厅室温低于18度且窗户关闭，把空调设到22度。\nmode: single\ntriggers:\n  - platform: sun\n    event: sunset\nconditions:\n  - condition: template\n    value_template: \"{{ (states('sensor.living_room_temperature') | float) < 18 and (states('binary_sensor.living_window') == 'off') }}\"\nactions:\n  - service: climate.set_temperature\n    target:\n      entity_id: climate.living_ac\n    data:\n      temperature: 22",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:42:13.025524Z",
+    "latency_ms": 2398,
+    "raw_output_sha256": "06caacfd4968b7110a58fc50c95972cc8f2dc948b935b89381dff4bb56c97294",
+    "attempt_output_sha256": [
+      "06caacfd4968b7110a58fc50c95972cc8f2dc948b935b89381dff4bb56c97294"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1144,
+    "output_tokens": 134,
+    "error": null,
+    "conversion_error": "不支持的 condition：template"
+  }
+}

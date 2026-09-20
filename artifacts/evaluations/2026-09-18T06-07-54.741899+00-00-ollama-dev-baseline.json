@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-09-18T06:07:54.741899+00:00",
+  "mode": "ollama",
+  "model": "qwen3:14b-q4_K_M",
+  "split": "dev",
+  "dataset_reviewed": false,
+  "pending_review_count": 15,
+  "sample_size": 15,
+  "summaries": [
+    {
+      "label": "baseline:qwen3:14b-q4_K_M",
+      "sample_size": 15,
+      "category_counts": {
+        "simple_valid": 3,
+        "multi_condition": 3,
+        "ambiguous": 3,
+        "unsupported": 3,
+        "conflict_safety": 3
+      },
+      "schema_success_rate": 0.8666666666666667,
+      "entity_exact_accuracy": 0.6666666666666666,
+      "entity_scored_count": 6,
+      "mean_slot_f1": 0.6142857142857143,
+      "slot_scored_count": 6,
+      "clarification_accuracy": 0.0,
+      "unsafe_block_recall": 0.8333333333333334,
+      "risk_code_recall": 0.8333333333333334,
+      "risk_code_precision": 0.8333333333333334,
+      "unknown_false_accept_count": 0,
+      "yaml_valid_rate": 0.6666666666666666,
+      "end_to_end_success_rate": 0.5333333333333333,
+      "latency_p50_ms": 1471,
+      "latency_p95_ms": 2081
+    }
+  ],
+  "claim_warning": "Model results describe only this synthetic benchmark and hardware run.",
+  "prompt_versions": [
+    "baseline-v1.0"
+  ],
+  "schema_versions": [
+    "automation-ir-v0.3"
+  ]
+}

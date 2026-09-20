@@ -1,0 +1,29 @@
+{
+  "case_id": "M01",
+  "pipeline": "baseline",
+  "raw_output": "alias: 晚上七点后玄关有人且客厅窗户关闭时触发\ndescription: 晚上七点后，如果玄关检测到有人，并且客厅窗户关闭，那么打开客厅灯并将空调设为22度。\nmode: single\ntriggers:\n  - platform: time\n    at: '19:00:00'\n  - platform: state\n    entity_id: binary_sensor.hall_motion\n    to: 'on'\nconditions:\n  - condition: state\n    entity_id: binary_sensor.living_window\n    state: 'off'\nactions:\n  - service: light.turn_on\n    target:\n      entity_id: light.living_main\n  - service: climate.set_temperature\n    data:\n      temperature: 22\n    target:\n      entity_id: climate.living_ac",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T06:07:33.655235Z",
+    "latency_ms": 2740,
+    "raw_output_sha256": "573d19acd8c6ef7aca81ab1929eebc43ed2d02e43d6b77826ec6eaf10e6c70f8",
+    "attempt_output_sha256": [
+      "573d19acd8c6ef7aca81ab1929eebc43ed2d02e43d6b77826ec6eaf10e6c70f8"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1085,
+    "output_tokens": 182,
+    "error": null
+  }
+}

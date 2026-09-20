@@ -1,0 +1,29 @@
+{
+  "case_id": "A01",
+  "pipeline": "baseline",
+  "raw_output": "alias: 晚上开灯\ndescription: 晚上检测到有人活动时自动开灯\ntriggers:\n  - platform: state\n    entity_id: binary_sensor.hall_motion\n    to: 'on'\n    for: 00:01:00\n  - platform: state\n    entity_id: binary_sensor.bedroom_motion\n    to: 'on'\n    for: 00:01:00\nconditions: []\nactions:\n  - service: light.turn_on\n    target:\n      entity_id: light.hall\n  - service: light.turn_on\n    target:\n      entity_id: light.bedroom_main\n  - service: light.turn_on\n    target:\n      entity_id: light.living_main\nmode: single",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:42:15.442342Z",
+    "latency_ms": 2972,
+    "raw_output_sha256": "aa22609b689a8f3c22e5b1f326492e4f6993e90222acd66a9ee774cd8b3f64ea",
+    "attempt_output_sha256": [
+      "aa22609b689a8f3c22e5b1f326492e4f6993e90222acd66a9ee774cd8b3f64ea"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1126,
+    "output_tokens": 170,
+    "error": null
+  }
+}

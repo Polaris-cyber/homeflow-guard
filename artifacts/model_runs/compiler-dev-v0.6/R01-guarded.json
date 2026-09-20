@@ -1,0 +1,26 @@
+{
+  "case_id": "R01",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"客厅主灯同时开关\", \"triggers\": [], \"conditions\": [], \"actions\": [], \"clarification_questions\": [\"请明确说明如何同时打开和关闭客厅主灯，例如是否需要特定条件或时间？\"], \"risk_acknowledgements\": []}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.6",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:59:03.255514Z",
+    "latency_ms": 1264,
+    "raw_output_sha256": "5d2e1b23a07279aa7540005f4f2428ad86cfc7e9b4050a1a09f07b4830a6b3dc",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1987,
+    "output_tokens": 59,
+    "error": null
+  }
+}

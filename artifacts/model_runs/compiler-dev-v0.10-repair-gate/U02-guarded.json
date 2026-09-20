@@ -1,0 +1,30 @@
+{
+  "case_id": "U02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"车库门传感器触发关闭客厅灯\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.garage_door\",\n      \"to_state\": \"on\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_off\",\n      \"parameters\": {}\n    }\n  ],\n  \"clarification_questions\": [\n    \"设备清单中没有名为 'binary_sensor.garage_door' 的实体，请确认车库门传感器的 entity_id 是否正确。\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.10-repair-gate",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:46:13.733561Z",
+    "latency_ms": 4461,
+    "raw_output_sha256": "c2d39e85e74fd6542edc94af0e487d0534e00da8541ad07e8a676a8a522d7f62",
+    "attempt_output_sha256": [
+      "63c78bfadc190e6dcb4c55b5971238e88ddd847a67da61d49159f619ca2d371d",
+      "c2d39e85e74fd6542edc94af0e487d0534e00da8541ad07e8a676a8a522d7f62"
+    ],
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 2557,
+    "output_tokens": 144,
+    "error": "1 validation error for AutomationIR\n  Value error, 需要澄清时不能保留触发器、条件或动作 [type=value_error, input_value={'name': '车库门传感...k_acknowledgements': []}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/value_error"
+  }
+}

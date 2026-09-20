@@ -1,0 +1,26 @@
+{
+  "case_id": "M03",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"日落后客厅温度低于18度且窗户关闭时启动空调\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"sun\",\n      \"event\": \"sunset\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"numeric_state\",\n      \"entity_id\": \"climate.living_ac\",\n      \"attribute\": \"temperature\",\n      \"below\": 18\n    },\n    {\n      \"condition_type\": \"state\",\n      \"entity_id\": \"binary_sensor.living_window\",\n      \"to_state\": \"off\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"climate.living_ac\",\n      \"service\": \"climate.set_temperature\",\n      \"parameters\": {\n        \"temperature\": 22\n      }\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.5",
+    "schema_version": "automation-ir-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:56:31.417775Z",
+    "latency_ms": 5459,
+    "raw_output_sha256": "31db5e4f1eeb152931b8d2d58c0b796d37fa2be99ead761d0d219ef79aca6808",
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 2158,
+    "output_tokens": 190,
+    "error": "2 validation errors for AutomationIR\nconditions.1.state.state\n  Field required [type=missing, input_value={'condition_type': 'state...dow', 'to_state': 'off'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nconditions.1.state.to_state\n  Extra inputs are not permitted [type=extra_forbidden, input_value='off', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden"
+  }
+}

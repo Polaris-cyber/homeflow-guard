@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-09-20T13:49:40.898919+00:00",
+  "mode": "ollama",
+  "model": "qwen3:14b-q4_K_M",
+  "split": "dev",
+  "dataset_reviewed": true,
+  "pending_review_count": 0,
+  "sample_size": 15,
+  "summaries": [
+    {
+      "label": "guarded:qwen3:14b-q4_K_M",
+      "sample_size": 15,
+      "category_counts": {
+        "simple_valid": 3,
+        "multi_condition": 3,
+        "ambiguous": 3,
+        "unsupported": 3,
+        "conflict_safety": 3
+      },
+      "schema_success_rate": 0.9333333333333333,
+      "entity_exact_accuracy": 0.8333333333333334,
+      "entity_scored_count": 6,
+      "mean_slot_f1": 0.8333333333333334,
+      "slot_scored_count": 6,
+      "clarification_accuracy": 1.0,
+      "unsafe_block_recall": 1.0,
+      "risk_code_recall": 0.3333333333333333,
+      "risk_code_precision": 1.0,
+      "unknown_false_accept_count": 0,
+      "yaml_valid_rate": 0.8333333333333334,
+      "end_to_end_success_rate": 0.9333333333333333,
+      "latency_p50_ms": 1877,
+      "latency_p95_ms": 3530
+    }
+  ],
+  "claim_warning": "Model results describe only this synthetic benchmark and hardware run.",
+  "prompt_versions": [
+    "compiler-dev-v0.11-repair-context"
+  ],
+  "schema_versions": [
+    "automation-ir-v0.3"
+  ]
+}

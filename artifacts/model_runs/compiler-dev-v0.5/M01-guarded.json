@@ -1,0 +1,26 @@
+{
+  "case_id": "M01",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"玄关有人且客厅窗户关闭时触发\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"time\": {\n        \"at\": \"19:00:00\"\n      }\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"state\",\n      \"state\": {\n        \"entity_id\": \"binary_sensor.hall_motion\",\n        \"to_state\": \"on\"\n      }\n    },\n    {\n      \"condition_type\": \"state\",\n      \"state\": {\n        \"entity_id\": \"binary_sensor.living_window\",\n        \"to_state\": \"off\"\n      }\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_on\"\n    },\n    {\n      \"entity_id\": \"climate.living_ac\",\n      \"service\": \"climate.set_temperature\",\n      \"parameters\": {\n        \"temperature\": 22\n      }\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.5",
+    "schema_version": "automation-ir-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:56:19.965799Z",
+    "latency_ms": 6423,
+    "raw_output_sha256": "1668a3f0b217f5e8ea90f43c2bd1ca6ef2e00ae0d3f88d8f75ccc34fe531068c",
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 2344,
+    "output_tokens": 229,
+    "error": "6 validation errors for AutomationIR\ntriggers.0.time.at\n  Field required [type=missing, input_value={'trigger_type': 'time', ...me': {'at': '19:00:00'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\ntriggers.0.time.time\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'at': '19:00:00'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden\nconditions.0.state.entity_id\n  Field required [type=missing, input_value={'condition_type': 'state...ion', 'to_state': 'on'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nconditions.0.state.state\n  Input should be a valid string [type=string_type, input_value={'entity_id': 'binary_sen...tion', 'to_state': 'on'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\nconditions.1.state.entity_id\n  Field required [type=missing, input_value={'condition_type': 'state...ow', 'to_state': 'off'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nconditions.1.state.state\n  Input should be a valid string [type=string_type, input_value={'entity_id': 'binary_sen...dow', 'to_state': 'off'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type"
+  }
+}

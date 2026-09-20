@@ -1,0 +1,40 @@
+{
+  "case_id": "R01",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"矛盾的客厅主灯操作\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"用户请求同时打开和关闭客厅主灯，这在逻辑上是矛盾的。请明确具体需求：是希望在晚上七点打开客厅主灯，还是关闭它？\"\n  ],\n  \"risk_acknowledgements\": [],\n  \"description\": \"用户请求同时打开和关闭客厅主灯，这在逻辑上是矛盾的。请明确具体需求：是希望在晚上七点打开客厅主灯，还是关闭它？\"\n}",
+  "effective_ir": {
+    "name": "矛盾的客厅主灯操作",
+    "description": "用户请求同时打开和关闭客厅主灯，这在逻辑上是矛盾的。请明确具体需求：是希望在晚上七点打开客厅主灯，还是关闭它？",
+    "triggers": [],
+    "conditions": [],
+    "actions": [],
+    "clarification_questions": [
+      "用户请求同时打开和关闭客厅主灯，这在逻辑上是矛盾的。请明确具体需求：是希望在晚上七点打开客厅主灯，还是关闭它？"
+    ],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.12-threshold-schema",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:52:46.358675Z",
+    "latency_ms": 2275,
+    "raw_output_sha256": "9501ad34f8830d0f5ba4cad3f5998adcf22b931d773294275f34cf646e4e9120",
+    "attempt_output_sha256": [
+      "9501ad34f8830d0f5ba4cad3f5998adcf22b931d773294275f34cf646e4e9120"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2441,
+    "output_tokens": 133,
+    "error": null
+  }
+}

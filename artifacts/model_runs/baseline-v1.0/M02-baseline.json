@@ -1,0 +1,29 @@
+{
+  "case_id": "M02",
+  "pipeline": "baseline",
+  "raw_output": "alias: 早上七点处理卧室窗帘和灯光\ndescription: 早上七点，如果卧室窗户关闭，就打开卧室窗帘并关闭卧室灯。\nmode: single\ntriggers:\n  - platform: time\n    at: '07:00'\nconditions:\n  - condition: state\n    entity_id: binary_sensor.bedroom_window\n    state: 'off'\nactions:\n  - service: cover.open_cover\n    target:\n      entity_id: cover.bedroom_curtain\n  - service: light.turn_off\n    target:\n      entity_id: light.bedroom_main",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:42:10.772008Z",
+    "latency_ms": 2211,
+    "raw_output_sha256": "7c93367b5ca7cd6d89fcd2367f9bd46a02fde2b3c936d04c18b7e7c4b9beb7ba",
+    "attempt_output_sha256": [
+      "7c93367b5ca7cd6d89fcd2367f9bd46a02fde2b3c936d04c18b7e7c4b9beb7ba"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1139,
+    "output_tokens": 129,
+    "error": null
+  }
+}

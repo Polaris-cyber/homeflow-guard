@@ -1,0 +1,29 @@
+{
+  "case_id": "U01",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"厨房风扇定时开启\", \"triggers\": [{\"trigger_type\": \"time\", \"at\": \"20:00:00\"}], \"conditions\": [], \"actions\": [], \"clarification_questions\": [\"厨房风扇的 entity_id 未在 inventory 中找到，请提供厨房风扇的设备信息。\"], \"risk_acknowledgements\": []}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.9-review-corrections",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:41:51.926021Z",
+    "latency_ms": 1419,
+    "raw_output_sha256": "7c2e7838f13f9649e7b45e3776830ebcbad8ce682be157519b764adac854710c",
+    "attempt_output_sha256": [
+      "7c2e7838f13f9649e7b45e3776830ebcbad8ce682be157519b764adac854710c"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2348,
+    "output_tokens": 77,
+    "error": null
+  }
+}

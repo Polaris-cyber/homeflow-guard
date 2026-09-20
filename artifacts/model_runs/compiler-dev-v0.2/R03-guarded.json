@@ -1,0 +1,25 @@
+{
+  "case_id": "R03",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"客厅主灯状态切换\", \"triggers\": [{\"trigger_type\": \"state\", \"entity_id\": \"light.living_main\", \"to_state\": \"on\"}], \"actions\": [{\"entity_id\": \"light.living_main\", \"service\": \"light.toggle\"}], \"description\": \"当客厅主灯状态变为开时，切换这盏灯的状态。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:45:59.572140Z",
+    "latency_ms": 1569,
+    "raw_output_sha256": "1b26e1a9e5fad7e6032f95d479913b6e87cec87a150defde82c3dc9683ca35cf",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1734,
+    "output_tokens": 81,
+    "error": null
+  }
+}

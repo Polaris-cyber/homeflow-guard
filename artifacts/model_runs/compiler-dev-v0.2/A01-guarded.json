@@ -1,0 +1,25 @@
+{
+  "case_id": "A01",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"晚上开灯\", \"triggers\": [], \"actions\": [], \"conditions\": [], \"risk_acknowledgements\": []}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:45:48.121583Z",
+    "latency_ms": 1361,
+    "raw_output_sha256": "4500f6eabe0e90abf87552a6e543ad423c214f98cbf5b345cf81bfaedf02c485",
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 1825,
+    "output_tokens": 30,
+    "error": "1 validation error for AutomationIR\n  Value error, 必须提供触发器，或明确列出需要澄清的问题 [type=value_error, input_value={'name': '晚上开灯', ...k_acknowledgements': []}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/value_error"
+  }
+}

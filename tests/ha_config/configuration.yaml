@@ -1,0 +1,9 @@
+homeassistant:
+  name: HomeFlow CI
+  latitude: 0
+  longitude: 0
+  elevation: 0
+  unit_system: metric
+  time_zone: UTC
+
+automation: !include automations.yaml

@@ -1,0 +1,25 @@
+{
+  "case_id": "S02",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"日落时关闭客厅窗帘\", \"triggers\": [{\"trigger_type\": \"sun\", \"event\": \"sunset\"}], \"actions\": [{\"entity_id\": \"cover.living_curtain\", \"service\": \"cover.close_cover\"}], \"description\": \"日落时关闭客厅窗帘。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:45:36.679741Z",
+    "latency_ms": 1329,
+    "raw_output_sha256": "af06da23136440e12974e4c134b950597143956ccb174391e0cee232eafaad9f",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1729,
+    "output_tokens": 67,
+    "error": null
+  }
+}

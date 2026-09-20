@@ -1,0 +1,29 @@
+{
+  "case_id": "M02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"早上七点卧室操作\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"at\": \"07:00:00\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"state\",\n      \"entity_id\": \"binary_sensor.bedroom_window\",\n      \"state\": \"off\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"cover.bedroom_curtain\",\n      \"service\": \"cover.open_cover\"\n    },\n    {\n      \"entity_id\": \"light.bedroom_main\",\n      \"service\": \"light.turn_off\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.11-repair-context",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:49:13.602661Z",
+    "latency_ms": 2598,
+    "raw_output_sha256": "6d0baa335874c1190a2c2eeea8977a64a881b62ad87f5c19ed332283c9920bec",
+    "attempt_output_sha256": [
+      "6d0baa335874c1190a2c2eeea8977a64a881b62ad87f5c19ed332283c9920bec"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2432,
+    "output_tokens": 158,
+    "error": null
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "case_id": "S03",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"玄关有人开灯\", \"triggers\": [{\"trigger_type\": \"state\", \"entity_id\": \"binary_sensor.hall_motion\", \"to_state\": \"on\"}], \"actions\": [{\"entity_id\": \"light.hall\", \"service\": \"light.turn_on\"}], \"description\": \"当玄关检测到有人时，打开玄关灯。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:45:38.057345Z",
+    "latency_ms": 1443,
+    "raw_output_sha256": "7cb6f0d6458e2d90974faf60abf9dd90676df864380733caabf0e1d17ab3656b",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1733,
+    "output_tokens": 80,
+    "error": null
+  }
+}

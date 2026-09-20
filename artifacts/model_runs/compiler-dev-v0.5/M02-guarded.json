@@ -1,0 +1,26 @@
+{
+  "case_id": "M02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"早上七点卧室窗帘与灯控制\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"time\": \"07:00:00\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"state\",\n      \"entity_id\": \"binary_sensor.bedroom_window\",\n      \"to_state\": \"off\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"cover.bedroom_curtain\",\n      \"service\": \"cover.open_cover\"\n    },\n    {\n      \"entity_id\": \"light.bedroom_main\",\n      \"service\": \"light.turn_off\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.5",
+    "schema_version": "automation-ir-v0.2",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:56:26.431320Z",
+    "latency_ms": 4949,
+    "raw_output_sha256": "79e4acd099dc6f19a0dce2a25d4194bfc0e126a41e3c2306f95000cfc2f8c0a2",
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 2278,
+    "output_tokens": 162,
+    "error": "4 validation errors for AutomationIR\ntriggers.0.time.at\n  Field required [type=missing, input_value={'trigger_type': 'time', 'time': '07:00:00'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\ntriggers.0.time.time\n  Extra inputs are not permitted [type=extra_forbidden, input_value='07:00:00', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden\nconditions.0.state.state\n  Field required [type=missing, input_value={'condition_type': 'state...dow', 'to_state': 'off'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nconditions.0.state.to_state\n  Extra inputs are not permitted [type=extra_forbidden, input_value='off', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/extra_forbidden"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "case_id": "M03",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"日落后客厅温度低于18度且窗户关闭时启动空调\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"sun\",\n      \"event\": \"sunset\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"numeric_state\",\n      \"entity_id\": \"climate.living_ac\",\n      \"attribute\": \"temperature\"\n    },\n    {\n      \"condition_type\": \"state\",\n      \"entity_id\": \"binary_sensor.living_window\",\n      \"attribute\": \"state\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"climate.living_ac\",\n      \"service\": \"climate.set_temperature\",\n      \"parameters\": {\n        \"temperature\": 22\n      }\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T05:48:32.861280Z",
+    "latency_ms": 3066,
+    "raw_output_sha256": "9b8328d8f374531c7a6e1e07ee14e0bb5f39d2e3bc4787c65c21816b88a865ac",
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1882,
+    "output_tokens": 181,
+    "error": null
+  }
+}

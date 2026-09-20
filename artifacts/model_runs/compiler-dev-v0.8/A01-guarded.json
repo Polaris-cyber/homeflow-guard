@@ -1,0 +1,29 @@
+{
+  "case_id": "A01",
+  "pipeline": "guarded",
+  "raw_output": "{\"name\": \"开灯\", \"triggers\": [], \"conditions\": [], \"actions\": [], \"clarification_questions\": [\"您希望在晚上什么时间开灯？\", \"您希望开哪个房间的灯？\"], \"risk_acknowledgements\": [], \"description\": \"需要更多信息来确定开灯的时间和具体房间。\"}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.8",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-18T06:04:21.806168Z",
+    "latency_ms": 1477,
+    "raw_output_sha256": "1cf18805d3a6591801e2d78a3644f9269fdcef6f627425ed23cd76f45a7c710d",
+    "attempt_output_sha256": [
+      "1cf18805d3a6591801e2d78a3644f9269fdcef6f627425ed23cd76f45a7c710d"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2203,
+    "output_tokens": 70,
+    "error": null
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "U01",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"晚上八点开启厨房风扇\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"at\": \"20:00:00\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"厨房风扇的实体 ID 未在设备清单中找到，请提供厨房风扇的 entity_id 或确认是否需要添加该设备。\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.10-repair-gate",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:46:10.376132Z",
+    "latency_ms": 3336,
+    "raw_output_sha256": "640d0965b50af013d770d90c9d18b5f3ac286695f397e9b922f6287429a6ce99",
+    "attempt_output_sha256": [
+      "777e87cd756e56a02d9eb02ae9db4e435d69817d504836cc3047cdc15e7d58b4",
+      "640d0965b50af013d770d90c9d18b5f3ac286695f397e9b922f6287429a6ce99"
+    ],
+    "retries": 1,
+    "parse_status": "failed",
+    "input_tokens": 2555,
+    "output_tokens": 106,
+    "error": "1 validation error for AutomationIR\n  Value error, 需要澄清时不能保留触发器、条件或动作 [type=value_error, input_value={'name': '晚上八点开...k_acknowledgements': []}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/value_error"
+  }
+}

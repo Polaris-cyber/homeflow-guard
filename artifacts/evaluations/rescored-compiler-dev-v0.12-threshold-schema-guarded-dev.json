@@ -1,0 +1,34 @@
+{
+  "rescored_at": "2026-09-20T14:02:45.296832+00:00",
+  "source_run_version": "compiler-dev-v0.12-threshold-schema",
+  "split": "dev",
+  "sample_size": 15,
+  "pipeline": "guarded",
+  "summary": {
+    "label": "replay:compiler-dev-v0.12-threshold-schema:guarded",
+    "sample_size": 15,
+    "category_counts": {
+      "simple_valid": 3,
+      "multi_condition": 3,
+      "ambiguous": 3,
+      "unsupported": 3,
+      "conflict_safety": 3
+    },
+    "schema_success_rate": 1.0,
+    "entity_exact_accuracy": 1.0,
+    "entity_scored_count": 6,
+    "mean_slot_f1": 1.0,
+    "slot_micro_f1": 1.0,
+    "slot_scored_count": 6,
+    "clarification_accuracy": 1.0,
+    "unsafe_block_recall": 1.0,
+    "risk_code_recall": 0.3333333333333333,
+    "risk_code_precision": 1.0,
+    "unknown_false_accept_count": 0,
+    "yaml_valid_rate": 1.0,
+    "end_to_end_success_rate": 1.0,
+    "latency_p50_ms": 2193,
+    "latency_p95_ms": 3335
+  },
+  "note": "Metrics recomputed from saved immutable outputs; no model call was made."
+}

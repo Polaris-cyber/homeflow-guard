@@ -1,0 +1,30 @@
+{
+  "case_id": "U02",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"车库门传感器触发关闭客厅灯\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"inventory.devices 中没有名为 'binary_sensor.garage_door' 的设备，请确认是否存在该设备。\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-dev-v0.11-repair-context",
+    "schema_version": "automation-ir-v0.3",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T13:49:29.564233Z",
+    "latency_ms": 3530,
+    "raw_output_sha256": "32562db7d8746bb52bae9368f5b39c9915aa7dc83b3d6200f8662dccc5ccffa2",
+    "attempt_output_sha256": [
+      "63c78bfadc190e6dcb4c55b5971238e88ddd847a67da61d49159f619ca2d371d",
+      "32562db7d8746bb52bae9368f5b39c9915aa7dc83b3d6200f8662dccc5ccffa2"
+    ],
+    "retries": 1,
+    "parse_status": "success",
+    "input_tokens": 2736,
+    "output_tokens": 73,
+    "error": null
+  }
+}

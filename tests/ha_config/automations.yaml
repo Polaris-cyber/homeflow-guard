@@ -1,0 +1,22 @@
+- alias: HomeFlow CI representative automation
+  description: Synthetic configuration used only for syntax validation.
+  triggers:
+    - trigger: state
+      entity_id: binary_sensor.hall_motion
+      to: "on"
+  conditions:
+    - condition: state
+      entity_id: binary_sensor.living_window
+      state: "off"
+  actions:
+    - action: light.turn_on
+      target:
+        entity_id: light.living_main
+      data:
+        brightness: 180
+    - action: climate.set_temperature
+      target:
+        entity_id: climate.living_ac
+      data:
+        temperature: 22
+  mode: single

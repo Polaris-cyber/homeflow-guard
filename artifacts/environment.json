@@ -1,0 +1,16 @@
+{
+  "recorded_at": "2026-09-17T18:26:29.879327+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python_version": "3.13.12",
+  "gpu": "NVIDIA GeForce RTX 5070 Ti, 16303, 595.79",
+  "ollama_version": "0.34.1",
+  "models": {
+    "qwen3:14b-q4_K_M": {
+      "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8"
+    },
+    "qwen3:8b-q4_K_M": {
+      "digest": null
+    }
+  },
+  "privacy_note": "No username, hostname, IP address, token, or device inventory is collected."
+}
