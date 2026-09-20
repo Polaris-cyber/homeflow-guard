@@ -232,7 +232,7 @@ class ModelRun(StrictModel):
     raw_output_sha256: str
     attempt_output_sha256: list[str]
     retries: int
-    parse_status: Literal["success", "normalized", "failed"]
+    parse_status: Literal["success", "normalized", "grounding_block", "failed"]
     input_tokens: int | None = None
     output_tokens: int | None = None
     error: str | None = None

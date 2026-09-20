@@ -1,0 +1,30 @@
+{
+  "case_id": "R07",
+  "pipeline": "baseline",
+  "raw_output": "alias: 晚上九点让客厅音箱同时播放和暂停\ndescription: 每天晚上九点，客厅音箱同时播放和暂停\ntriggers:\n  - platform: time\n    at: '21:00'\nconditions: []\nactions:\n  - service: media_player.media_play\n    target:\n      entity_id: media_player.living_speaker\n  - service: media_player.media_pause\n    target:\n      entity_id: media_player.living_speaker\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:51.364401Z",
+    "latency_ms": 1961,
+    "raw_output_sha256": "57d709b11ad3f85f3c10383b80a60c295350a9aa5da2310ace13573f276af3a4",
+    "attempt_output_sha256": [
+      "57d709b11ad3f85f3c10383b80a60c295350a9aa5da2310ace13573f276af3a4"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1132,
+    "output_tokens": 112,
+    "error": null
+  }
+}

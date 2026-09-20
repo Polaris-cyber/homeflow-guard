@@ -61,7 +61,7 @@ def main() -> None:
                 case,
                 predicted_ir,
                 inventory,
-                schema_success=run.get("parse_status") == "success" and predicted_ir is not None,
+                schema_success=run.get("parse_status") in {"success", "grounding_block"} and predicted_ir is not None,
                 latency_ms=run.get("latency_ms"),
                 yaml_valid_override=yaml_valid_override,
             )

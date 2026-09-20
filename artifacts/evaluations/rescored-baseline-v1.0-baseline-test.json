@@ -1,0 +1,34 @@
+{
+  "rescored_at": "2026-09-20T14:10:24.088379+00:00",
+  "source_run_version": "baseline-v1.0",
+  "split": "test",
+  "sample_size": 35,
+  "pipeline": "baseline",
+  "summary": {
+    "label": "replay:baseline-v1.0:baseline",
+    "sample_size": 35,
+    "category_counts": {
+      "simple_valid": 9,
+      "multi_condition": 7,
+      "ambiguous": 5,
+      "unsupported": 7,
+      "conflict_safety": 7
+    },
+    "schema_success_rate": 0.7142857142857143,
+    "entity_exact_accuracy": 0.6875,
+    "entity_scored_count": 16,
+    "mean_slot_f1": 0.5607654600301659,
+    "slot_micro_f1": 0.6169154228855721,
+    "slot_scored_count": 16,
+    "clarification_accuracy": 0.0,
+    "unsafe_block_recall": 0.7142857142857143,
+    "risk_code_recall": 0.7058823529411765,
+    "risk_code_precision": 0.8571428571428571,
+    "unknown_false_accept_count": 0,
+    "yaml_valid_rate": 0.6875,
+    "end_to_end_success_rate": 0.4,
+    "latency_p50_ms": 1732,
+    "latency_p95_ms": 3143
+  },
+  "note": "Metrics recomputed from saved immutable outputs; no model call was made."
+}

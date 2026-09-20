@@ -147,7 +147,7 @@ def main() -> int:
                 try:
                     result = compile_request(item["user_request"], inventory, model=args.model, client=client)
                     predicted_ir = result.ir
-                    schema_success = result.run.parse_status == "success"
+                    schema_success = result.run.parse_status in {"success", "grounding_block"}
                     latency_ms = result.run.latency_ms
                     current_run_versions.add(result.run.prompt_version)
                     current_schema_versions.add(result.run.schema_version)
@@ -159,9 +159,9 @@ def main() -> int:
             else:
                 try:
                     raw_yaml, run = baseline_yaml(item["user_request"], inventory, model=args.model, client=client)
+                    latency_ms = run.latency_ms
                     predicted_ir = yaml_to_ir(raw_yaml)
                     schema_success = True
-                    latency_ms = run.latency_ms
                     current_run_versions.add(run.prompt_version)
                     current_schema_versions.add(run.schema_version)
                     yaml_valid_override = static_yaml_check(raw_yaml)[0]

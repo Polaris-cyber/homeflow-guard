@@ -1,0 +1,31 @@
+{
+  "case_id": "M09",
+  "pipeline": "baseline",
+  "raw_output": "alias: 手动启动睡眠模式\ndescription: 关闭卧室灯、关闭卧室窗帘并把空调设为24度\ntriggers:\n  - platform: homeassistant\n    event: start\nconditions: []\nactions:\n  - service: light.turn_off\n    target:\n      entity_id: light.bedroom_main\n  - service: cover.close_cover\n    target:\n      entity_id: cover.bedroom_curtain\n  - service: climate.set_temperature\n    data:\n      temperature: 24\n    target:\n      entity_id: climate.bedroom_ac\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:16.065137Z",
+    "latency_ms": 2130,
+    "raw_output_sha256": "8fb1f550d683d499d36d50bdc30a8b1c5ef68e53b085fa3cfb8211c86d068e86",
+    "attempt_output_sha256": [
+      "8fb1f550d683d499d36d50bdc30a8b1c5ef68e53b085fa3cfb8211c86d068e86"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1142,
+    "output_tokens": 129,
+    "error": null,
+    "conversion_error": "不支持的 trigger：homeassistant"
+  }
+}

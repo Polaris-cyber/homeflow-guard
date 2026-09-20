@@ -1,0 +1,53 @@
+{
+  "case_id": "U10",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"玄关有人时开灯并设色温\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.hall_motion\",\n      \"to_state\": \"on\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_on\",\n      \"parameters\": {\n        \"color_temperature\": 3000\n      }\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "玄关有人时开灯并设色温",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "state",
+        "entity_id": "binary_sensor.hall_motion",
+        "from_state": null,
+        "to_state": "on"
+      }
+    ],
+    "conditions": [],
+    "actions": [
+      {
+        "entity_id": "light.living_main",
+        "service": "light.turn_on",
+        "parameters": {
+          "color_temperature": 3000
+        }
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:29.418044Z",
+    "latency_ms": 2216,
+    "raw_output_sha256": "3b328a41f7ec014ec79322e30913528f88b3ec120d27616218e7044c0269d6bb",
+    "attempt_output_sha256": [
+      "3b328a41f7ec014ec79322e30913528f88b3ec120d27616218e7044c0269d6bb"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2446,
+    "output_tokens": 128,
+    "error": null
+  }
+}

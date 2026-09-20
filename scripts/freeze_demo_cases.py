@@ -23,7 +23,7 @@ OUTPUT = ROOT / "data" / "demo_model_cases.json"
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--prompt-version", default="compiler-dev-v0.8")
+    parser.add_argument("--prompt-version", default="compiler-dev-v0.12-threshold-schema")
     args = parser.parse_args()
     inventory = load_inventory(ROOT / "data" / "sample_home.yaml")
     cases = {item["id"]: item for item in load_cases(ROOT / "data" / "gold_cases.jsonl")}
@@ -35,7 +35,11 @@ def main() -> None:
             missing.append(case_id)
             continue
         payload = json.loads(run_path.read_text(encoding="utf-8"))
-        ir = AutomationIR.model_validate_json(payload["raw_output"])
+        ir = (
+            AutomationIR.model_validate(payload["effective_ir"])
+            if payload.get("effective_ir") is not None
+            else AutomationIR.model_validate_json(payload["raw_output"])
+        )
         frozen.append(
             {
                 "id": case_id,

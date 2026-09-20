@@ -1,0 +1,30 @@
+{
+  "case_id": "M06",
+  "pipeline": "baseline",
+  "raw_output": "alias: 早上八点前卧室有人活动时打开卧室灯\ndescription: 如果早上八点前卧室有人活动，则打开卧室灯并设置亮度为80\ntriggers:\n  - platform: state\n    entity_id: binary_sensor.bedroom_motion\n    to: 'on'\nconditions:\n  - condition: time\n    after: '08:00'\n    before: '08:00'\nactions:\n  - service: light.turn_on\n    target:\n      entity_id: light.bedroom_main\n    data:\n      brightness: 80\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:09.435027Z",
+    "latency_ms": 2243,
+    "raw_output_sha256": "b01b1e89247aa36c8f709dab50d064fd52af9903ebdf16f019c2e5b2349288f1",
+    "attempt_output_sha256": [
+      "b01b1e89247aa36c8f709dab50d064fd52af9903ebdf16f019c2e5b2349288f1"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1137,
+    "output_tokens": 130,
+    "error": null
+  }
+}

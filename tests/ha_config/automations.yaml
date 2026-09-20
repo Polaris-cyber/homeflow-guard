@@ -1,22 +1,119 @@
-- alias: HomeFlow CI representative automation
-  description: Synthetic configuration used only for syntax validation.
+- alias: 晚间客厅照明
+  description: 合成评测场景：晚间客厅照明
   triggers:
-    - trigger: state
-      entity_id: binary_sensor.hall_motion
-      to: "on"
-  conditions:
-    - condition: state
-      entity_id: binary_sensor.living_window
-      state: "off"
+  - trigger: time
+    at: '19:00:00'
+  conditions: []
   actions:
-    - action: light.turn_on
-      target:
-        entity_id: light.living_main
-      data:
-        brightness: 180
-    - action: climate.set_temperature
-      target:
-        entity_id: climate.living_ac
-      data:
-        temperature: 22
+  - action: light.turn_on
+    target:
+      entity_id: light.living_main
+    data:
+      brightness: 180
+  mode: single
+- alias: 日落关闭客厅窗帘
+  description: 合成评测场景：日落关闭客厅窗帘
+  triggers:
+  - trigger: sun
+    event: sunset
+  conditions: []
+  actions:
+  - action: cover.close_cover
+    target:
+      entity_id: cover.living_curtain
+  mode: single
+- alias: 玄关感应灯
+  description: 合成评测场景：玄关感应灯
+  triggers:
+  - trigger: state
+    entity_id: binary_sensor.hall_motion
+    to: 'on'
+  conditions: []
+  actions:
+  - action: light.turn_on
+    target:
+      entity_id: light.hall
+  mode: single
+- alias: 客厅低温调节
+  description: 合成评测场景：客厅低温调节
+  triggers:
+  - trigger: numeric_state
+    entity_id: climate.living_ac
+    attribute: current_temperature
+    below: 18.0
+  conditions: []
+  actions:
+  - action: climate.set_temperature
+    target:
+      entity_id: climate.living_ac
+    data:
+      temperature: 22
+  mode: single
+- alias: 晨间卧室窗帘
+  description: 合成评测场景：晨间卧室窗帘
+  triggers:
+  - trigger: time
+    at: 07:30:00
+  conditions: []
+  actions:
+  - action: cover.open_cover
+    target:
+      entity_id: cover.bedroom_curtain
+  mode: single
+- alias: 卧室熄灯
+  description: 合成评测场景：卧室熄灯
+  triggers:
+  - trigger: time
+    at: '23:00:00'
+  conditions: []
+  actions:
+  - action: light.turn_off
+    target:
+      entity_id: light.bedroom_main
+  mode: single
+- alias: 开窗暂停音箱
+  description: 合成评测场景：开窗暂停音箱
+  triggers:
+  - trigger: state
+    entity_id: binary_sensor.living_window
+    to: 'on'
+  conditions: []
+  actions:
+  - action: media_player.media_pause
+    target:
+      entity_id: media_player.living_speaker
+  mode: single
+- alias: 日出打开客厅窗帘
+  description: 合成评测场景：日出打开客厅窗帘
+  triggers:
+  - trigger: sun
+    event: sunrise
+  conditions: []
+  actions:
+  - action: cover.open_cover
+    target:
+      entity_id: cover.living_curtain
+  mode: single
+- alias: 手动播放音箱
+  description: 合成评测场景：手动播放音箱
+  triggers: []
+  conditions: []
+  actions:
+  - action: media_player.media_play
+    target:
+      entity_id: media_player.living_speaker
+  mode: single
+- alias: 玄关柔光
+  description: 合成评测场景：玄关柔光
+  triggers:
+  - trigger: state
+    entity_id: binary_sensor.hall_motion
+    to: 'on'
+  conditions: []
+  actions:
+  - action: light.turn_on
+    target:
+      entity_id: light.hall
+    data:
+      brightness: 120
   mode: single

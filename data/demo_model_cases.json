@@ -4,7 +4,7 @@
     "category": "simple_valid",
     "user_request": "每天晚上七点打开客厅主灯，亮度180。",
     "ir": {
-      "name": "每天晚上七点打开客厅主灯",
+      "name": "每天晚上七点开客厅主灯",
       "description": "",
       "triggers": [
         {
@@ -30,23 +30,23 @@
       "model": "qwen3:14b-q4_K_M",
       "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
       "ollama_version": "0.34.1",
-      "prompt_version": "compiler-dev-v0.8",
-      "schema_version": "automation-ir-v0.3",
+      "prompt_version": "compiler-dev-v0.12-threshold-schema",
+      "schema_version": "automation-ir-v0.4",
       "generation_config": {
         "temperature": 0,
         "seed": 42,
         "num_ctx": 8192,
         "think": false
       },
-      "requested_at": "2026-09-18T06:04:05.169755Z",
-      "latency_ms": 2006,
-      "raw_output_sha256": "22142f7fece7d28349efb6ac21bdcfb644fdf3d8f4dda9baa939e75a86efc58b",
+      "requested_at": "2026-09-20T13:52:17.718066Z",
+      "latency_ms": 2444,
+      "raw_output_sha256": "261d34868420d72e4439dc915135b25591059ade35d83f0daf0b3d06a944e8ad",
       "attempt_output_sha256": [
-        "22142f7fece7d28349efb6ac21bdcfb644fdf3d8f4dda9baa939e75a86efc58b"
+        "261d34868420d72e4439dc915135b25591059ade35d83f0daf0b3d06a944e8ad"
       ],
       "retries": 0,
       "parse_status": "success",
-      "input_tokens": 2212,
+      "input_tokens": 2444,
       "output_tokens": 118,
       "error": null
     },
@@ -82,23 +82,23 @@
       "model": "qwen3:14b-q4_K_M",
       "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
       "ollama_version": "0.34.1",
-      "prompt_version": "compiler-dev-v0.8",
-      "schema_version": "automation-ir-v0.3",
+      "prompt_version": "compiler-dev-v0.12-threshold-schema",
+      "schema_version": "automation-ir-v0.4",
       "generation_config": {
         "temperature": 0,
         "seed": 42,
         "num_ctx": 8192,
         "think": false
       },
-      "requested_at": "2026-09-18T06:04:07.184412Z",
-      "latency_ms": 1704,
+      "requested_at": "2026-09-20T13:52:20.197134Z",
+      "latency_ms": 1752,
       "raw_output_sha256": "b3cd8eb7fb1dc1fdc3d1e46d26f905b7a03d605488c6b7b0f4df2f131b0fa30c",
       "attempt_output_sha256": [
         "b3cd8eb7fb1dc1fdc3d1e46d26f905b7a03d605488c6b7b0f4df2f131b0fa30c"
       ],
       "retries": 0,
       "parse_status": "success",
-      "input_tokens": 2205,
+      "input_tokens": 2437,
       "output_tokens": 101,
       "error": null
     },
@@ -153,23 +153,23 @@
       "model": "qwen3:14b-q4_K_M",
       "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
       "ollama_version": "0.34.1",
-      "prompt_version": "compiler-dev-v0.8",
-      "schema_version": "automation-ir-v0.3",
+      "prompt_version": "compiler-dev-v0.12-threshold-schema",
+      "schema_version": "automation-ir-v0.4",
       "generation_config": {
         "temperature": 0,
         "seed": 42,
         "num_ctx": 8192,
         "think": false
       },
-      "requested_at": "2026-09-18T06:04:10.903965Z",
-      "latency_ms": 3052,
+      "requested_at": "2026-09-20T13:52:23.854795Z",
+      "latency_ms": 3335,
       "raw_output_sha256": "9ebfdf8c108deef59b38bbaccbd2ec3f56541e4742e73e22fcb0273b5cb6070d",
       "attempt_output_sha256": [
         "9ebfdf8c108deef59b38bbaccbd2ec3f56541e4742e73e22fcb0273b5cb6070d"
       ],
       "retries": 0,
       "parse_status": "success",
-      "input_tokens": 2226,
+      "input_tokens": 2458,
       "output_tokens": 211,
       "error": null
     },
@@ -215,23 +215,23 @@
       "model": "qwen3:14b-q4_K_M",
       "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
       "ollama_version": "0.34.1",
-      "prompt_version": "compiler-dev-v0.8",
-      "schema_version": "automation-ir-v0.3",
+      "prompt_version": "compiler-dev-v0.12-threshold-schema",
+      "schema_version": "automation-ir-v0.4",
       "generation_config": {
         "temperature": 0,
         "seed": 42,
         "num_ctx": 8192,
         "think": false
       },
-      "requested_at": "2026-09-18T06:04:13.998877Z",
-      "latency_ms": 2531,
+      "requested_at": "2026-09-20T13:52:27.222348Z",
+      "latency_ms": 2629,
       "raw_output_sha256": "8019f7f980a570cc7d1d986f740beaeb61c1e13da4810c203f321df3c3dc38d8",
       "attempt_output_sha256": [
         "8019f7f980a570cc7d1d986f740beaeb61c1e13da4810c203f321df3c3dc38d8"
       ],
       "retries": 0,
       "parse_status": "success",
-      "input_tokens": 2216,
+      "input_tokens": 2448,
       "output_tokens": 158,
       "error": null
     },
@@ -242,13 +242,13 @@
     "category": "ambiguous",
     "user_request": "晚上帮我开灯。",
     "ir": {
-      "name": "开灯",
-      "description": "需要更多信息来确定开灯的时间和具体房间。",
+      "name": "晚上开灯",
+      "description": "",
       "triggers": [],
       "conditions": [],
       "actions": [],
       "clarification_questions": [
-        "您希望在晚上什么时间开灯？",
+        "您希望在晚上哪个具体时间开灯？",
         "您希望开哪个房间的灯？"
       ],
       "risk_acknowledgements": []
@@ -267,24 +267,24 @@
       "model": "qwen3:14b-q4_K_M",
       "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
       "ollama_version": "0.34.1",
-      "prompt_version": "compiler-dev-v0.8",
-      "schema_version": "automation-ir-v0.3",
+      "prompt_version": "compiler-dev-v0.12-threshold-schema",
+      "schema_version": "automation-ir-v0.4",
       "generation_config": {
         "temperature": 0,
         "seed": 42,
         "num_ctx": 8192,
         "think": false
       },
-      "requested_at": "2026-09-18T06:04:21.806168Z",
-      "latency_ms": 1477,
-      "raw_output_sha256": "1cf18805d3a6591801e2d78a3644f9269fdcef6f627425ed23cd76f45a7c710d",
+      "requested_at": "2026-09-20T13:52:32.867986Z",
+      "latency_ms": 1336,
+      "raw_output_sha256": "9c169138f7a5ce18a6b47ccc5c1648f7e3ecde852fefa72d8357702a2ec69fc6",
       "attempt_output_sha256": [
-        "1cf18805d3a6591801e2d78a3644f9269fdcef6f627425ed23cd76f45a7c710d"
+        "9c169138f7a5ce18a6b47ccc5c1648f7e3ecde852fefa72d8357702a2ec69fc6"
       ],
       "retries": 0,
       "parse_status": "success",
-      "input_tokens": 2203,
-      "output_tokens": 70,
+      "input_tokens": 2435,
+      "output_tokens": 69,
       "error": null
     },
     "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
@@ -294,18 +294,13 @@
     "category": "unsupported",
     "user_request": "晚上八点打开厨房风扇。",
     "ir": {
-      "name": "厨房风扇定时开启",
+      "name": "晚上八点开启厨房风扇",
       "description": "",
-      "triggers": [
-        {
-          "trigger_type": "time",
-          "at": "20:00:00"
-        }
-      ],
+      "triggers": [],
       "conditions": [],
       "actions": [],
       "clarification_questions": [
-        "厨房风扇的 entity_id 未在 inventory 中找到，请提供正确的设备信息。"
+        "厨房风扇的 entity_id 未在 inventory 中找到，请提供厨房风扇的设备信息。"
       ],
       "risk_acknowledgements": []
     },
@@ -323,24 +318,25 @@
       "model": "qwen3:14b-q4_K_M",
       "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
       "ollama_version": "0.34.1",
-      "prompt_version": "compiler-dev-v0.8",
-      "schema_version": "automation-ir-v0.3",
+      "prompt_version": "compiler-dev-v0.12-threshold-schema",
+      "schema_version": "automation-ir-v0.4",
       "generation_config": {
         "temperature": 0,
         "seed": 42,
         "num_ctx": 8192,
         "think": false
       },
-      "requested_at": "2026-09-18T06:04:26.117870Z",
-      "latency_ms": 1474,
-      "raw_output_sha256": "dfeddd64302fdceb125c37bd2fedfa9d5b1766e699f26258f8f6b6998e12250b",
+      "requested_at": "2026-09-20T13:52:37.536765Z",
+      "latency_ms": 2843,
+      "raw_output_sha256": "723ec5f70d12f28cae8bb1b755b3109028b5b635e8674b17f6c0068f39fabe2e",
       "attempt_output_sha256": [
-        "dfeddd64302fdceb125c37bd2fedfa9d5b1766e699f26258f8f6b6998e12250b"
+        "777e87cd756e56a02d9eb02ae9db4e435d69817d504836cc3047cdc15e7d58b4",
+        "723ec5f70d12f28cae8bb1b755b3109028b5b635e8674b17f6c0068f39fabe2e"
       ],
-      "retries": 0,
+      "retries": 1,
       "parse_status": "success",
-      "input_tokens": 2205,
-      "output_tokens": 75,
+      "input_tokens": 2702,
+      "output_tokens": 70,
       "error": null
     },
     "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
@@ -350,13 +346,13 @@
     "category": "conflict_safety",
     "user_request": "晚上七点同时打开和关闭客厅主灯。",
     "ir": {
-      "name": "客厅主灯矛盾操作",
-      "description": "需求中存在矛盾操作，无法生成自动化规则。",
+      "name": "矛盾的客厅主灯操作",
+      "description": "用户请求同时打开和关闭客厅主灯，这在逻辑上是矛盾的。请明确具体需求：是希望在晚上七点打开客厅主灯，还是关闭它？",
       "triggers": [],
       "conditions": [],
       "actions": [],
       "clarification_questions": [
-        "晚上七点同时打开和关闭客厅主灯的需求存在矛盾，无法执行。请明确是打开还是关闭客厅主灯？"
+        "用户请求同时打开和关闭客厅主灯，这在逻辑上是矛盾的。请明确具体需求：是希望在晚上七点打开客厅主灯，还是关闭它？"
       ],
       "risk_acknowledgements": []
     },
@@ -374,24 +370,24 @@
       "model": "qwen3:14b-q4_K_M",
       "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
       "ollama_version": "0.34.1",
-      "prompt_version": "compiler-dev-v0.8",
-      "schema_version": "automation-ir-v0.3",
+      "prompt_version": "compiler-dev-v0.12-threshold-schema",
+      "schema_version": "automation-ir-v0.4",
       "generation_config": {
         "temperature": 0,
         "seed": 42,
         "num_ctx": 8192,
         "think": false
       },
-      "requested_at": "2026-09-18T06:04:31.656090Z",
-      "latency_ms": 1557,
-      "raw_output_sha256": "5be7a8703cd8c48b3d7f95848c8960a90eef97b2ed159a9b9b8ad533e2385552",
+      "requested_at": "2026-09-20T13:52:46.358675Z",
+      "latency_ms": 2275,
+      "raw_output_sha256": "9501ad34f8830d0f5ba4cad3f5998adcf22b931d773294275f34cf646e4e9120",
       "attempt_output_sha256": [
-        "5be7a8703cd8c48b3d7f95848c8960a90eef97b2ed159a9b9b8ad533e2385552"
+        "9501ad34f8830d0f5ba4cad3f5998adcf22b931d773294275f34cf646e4e9120"
       ],
       "retries": 0,
       "parse_status": "success",
-      "input_tokens": 2209,
-      "output_tokens": 81,
+      "input_tokens": 2441,
+      "output_tokens": 133,
       "error": null
     },
     "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
@@ -436,23 +432,23 @@
       "model": "qwen3:14b-q4_K_M",
       "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
       "ollama_version": "0.34.1",
-      "prompt_version": "compiler-dev-v0.8",
-      "schema_version": "automation-ir-v0.3",
+      "prompt_version": "compiler-dev-v0.12-threshold-schema",
+      "schema_version": "automation-ir-v0.4",
       "generation_config": {
         "temperature": 0,
         "seed": 42,
         "num_ctx": 8192,
         "think": false
       },
-      "requested_at": "2026-09-18T06:04:34.785825Z",
-      "latency_ms": 1916,
+      "requested_at": "2026-09-20T13:52:50.497605Z",
+      "latency_ms": 1895,
       "raw_output_sha256": "40e7fd9839e71b8a14e1fffa09bbed1d6ef71010b086bb472c348a8758fc99ea",
       "attempt_output_sha256": [
         "40e7fd9839e71b8a14e1fffa09bbed1d6ef71010b086bb472c348a8758fc99ea"
       ],
       "retries": 0,
       "parse_status": "success",
-      "input_tokens": 2210,
+      "input_tokens": 2442,
       "output_tokens": 108,
       "error": null
     },

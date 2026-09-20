@@ -1,0 +1,31 @@
+{
+  "case_id": "S09",
+  "pipeline": "baseline",
+  "raw_output": "alias: 手动启动播放\ndescription: 手动启动时让客厅音箱播放\ntriggers:\n  - platform: homeassistant\n    event: start\nconditions: []\nactions:\n  - service: media_player.media_play\n    target:\n      entity_id: media_player.living_speaker\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:57.367779Z",
+    "latency_ms": 1315,
+    "raw_output_sha256": "07bef326759c4c589c2dffef6ffdc79f8fb503f874bffa796d9ad604b1eb8114",
+    "attempt_output_sha256": [
+      "07bef326759c4c589c2dffef6ffdc79f8fb503f874bffa796d9ad604b1eb8114"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1129,
+    "output_tokens": 72,
+    "error": null,
+    "conversion_error": "不支持的 trigger：homeassistant"
+  }
+}

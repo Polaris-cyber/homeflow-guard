@@ -1,0 +1,41 @@
+{
+  "case_id": "R05",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"日落时同时打开和关闭客厅窗帘\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"sun\",\n      \"event\": \"sunset\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"用户需求中要求同时打开和关闭客厅窗帘，这在逻辑上是矛盾的。请确认是否希望在日落时打开窗帘，或在日落时关闭窗帘？\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "日落时同时打开和关闭客厅窗帘",
+    "description": "",
+    "triggers": [],
+    "conditions": [],
+    "actions": [],
+    "clarification_questions": [
+      "用户需求中要求同时打开和关闭客厅窗帘，这在逻辑上是矛盾的。请确认是否希望在日落时打开窗帘，或在日落时关闭窗帘？"
+    ],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:33.238698Z",
+    "latency_ms": 4542,
+    "raw_output_sha256": "1d62f8f19205417f2d713eddceb2ce3df1c0b61691d8e2956984921e46e5db0f",
+    "attempt_output_sha256": [
+      "d7e74acc76e387a5e7e0382bf71fdbef265990124d850390dda15d93bf6ff1a9",
+      "1d62f8f19205417f2d713eddceb2ce3df1c0b61691d8e2956984921e46e5db0f"
+    ],
+    "retries": 1,
+    "parse_status": "normalized",
+    "input_tokens": 2785,
+    "output_tokens": 114,
+    "error": "模型两次都混合了澄清问题与半成品规则；程序已丢弃规则，仅保留问题。"
+  }
+}

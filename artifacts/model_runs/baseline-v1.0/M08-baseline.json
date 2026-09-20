@@ -1,0 +1,30 @@
+{
+  "case_id": "M08",
+  "pipeline": "baseline",
+  "raw_output": "alias: 日出时打开卧室窗帘和主灯\ndescription: 日出时如果卧室窗户关闭，打开卧室窗帘和主灯。\nmode: single\ntriggers:\n  - platform: sun\n    event: sunrise\nconditions:\n  - condition: state\n    entity_id: binary_sensor.bedroom_window\n    state: 'off'\nactions:\n  - service: cover.open_cover\n    target:\n      entity_id: cover.bedroom_curtain\n  - service: light.turn_on\n    target:\n      entity_id: light.bedroom_main",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:14.024768Z",
+    "latency_ms": 2013,
+    "raw_output_sha256": "b86425c7e75fd9a0253894d5914d09fcb7f13e8278188fe481ea9e8d0c3be91e",
+    "attempt_output_sha256": [
+      "b86425c7e75fd9a0253894d5914d09fcb7f13e8278188fe481ea9e8d0c3be91e"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1136,
+    "output_tokens": 120,
+    "error": null
+  }
+}

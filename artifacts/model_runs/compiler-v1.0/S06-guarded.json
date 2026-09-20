@@ -1,0 +1,49 @@
+{
+  "case_id": "S06",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"夜间关闭卧室主灯\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"at\": \"22:00:00\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.bedroom_main\",\n      \"service\": \"light.turn_off\",\n      \"parameters\": {}\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "夜间关闭卧室主灯",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "time",
+        "at": "22:00:00"
+      }
+    ],
+    "conditions": [],
+    "actions": [
+      {
+        "entity_id": "light.bedroom_main",
+        "service": "light.turn_off",
+        "parameters": {}
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:06:29.640689Z",
+    "latency_ms": 1954,
+    "raw_output_sha256": "3f4de49b06eda00fdb04a590879e1ef4b23374cd2d99968c4880e65725350c6f",
+    "attempt_output_sha256": [
+      "3f4de49b06eda00fdb04a590879e1ef4b23374cd2d99968c4880e65725350c6f"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2438,
+    "output_tokens": 104,
+    "error": null
+  }
+}

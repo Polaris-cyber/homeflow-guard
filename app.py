@@ -10,6 +10,7 @@ from homeflow import __version__
 from homeflow.compiler import CompilerError, OllamaClient, compile_request
 from homeflow.evaluation import load_cases
 from homeflow.exporter import ExportBlocked, export_yaml, validation_report_json
+from homeflow.grounding import grounding_issues
 from homeflow.io_utils import InputError, load_inventory, parse_inventory_bytes, parse_ir_text
 from homeflow.models import AutomationIR, DeviceInventory, SimulationInput
 from homeflow.simulator import simulate
@@ -71,11 +72,13 @@ def sample_states() -> dict:
     return json.loads(SAMPLE_STATES_PATH.read_text(encoding="utf-8"))
 
 
-def set_ir(ir: AutomationIR, source: str, run: dict | None = None) -> None:
+def set_ir(ir: AutomationIR, source: str, run: dict | None = None, request_text: str | None = None) -> None:
     st.session_state["ir"] = ir
     st.session_state["ir_json"] = ir.model_dump_json(indent=2)
     st.session_state["ir_source"] = source
     st.session_state["model_run"] = run
+    if request_text is not None:
+        st.session_state["source_request"] = request_text
     st.session_state.pop("simulation", None)
 
 
@@ -85,6 +88,7 @@ def set_inventory(inventory: DeviceInventory) -> None:
     st.session_state.pop("ir_json", None)
     st.session_state.pop("ir_source", None)
     st.session_state.pop("model_run", None)
+    st.session_state.pop("source_request", None)
     st.session_state.pop("simulation", None)
 
 
@@ -183,7 +187,7 @@ with demand_tab:
         help="本地模型模式可自由编辑；公开模式只能选择固化案例，不会实时理解修改后的文字。",
     )
     if mode == "公开参考案例" and frozen_cases:
-        st.caption("以下是旧开发版的真实本地模型输出；人工复核后的标签和当前 Prompt 尚未重新评测。")
+        st.caption("以下是冻结前开发版的真实本地模型输出，仅用于交互演示；不是锁定测试集结果或实时模型调用。")
     if st.button("生成候选规则", type="primary", width="stretch"):
         if mode == "公开参考案例":
             if frozen_cases:
@@ -191,12 +195,14 @@ with demand_tab:
                     AutomationIR.model_validate(selected_case["ir"]),
                     source="frozen_local_ollama_run",
                     run=selected_case["model_run"],
+                    request_text=selected_case["user_request"],
                 )
                 st.info("已加载真实本地模型运行后固化的输出；输入为合成场景，当前不是实时调用。")
             else:
                 set_ir(
                     AutomationIR.model_validate(selected_case["expected_ir"]),
                     source="synthetic_reference_fixture",
+                    request_text=selected_case["user_request"],
                 )
                 st.info("已加载合成参考规则。它用于体验产品链路，不是实时 AI 结果。")
         else:
@@ -204,9 +210,9 @@ with demand_tab:
                 with st.spinner("本地模型正在编译结构化规则……"):
                     result = compile_request(user_request, inventory, model=model)
                 if result.ir:
-                    set_ir(result.ir, source="ollama", run=result.run.model_dump(mode="json"))
-                    if result.run.parse_status == "normalized":
-                        st.warning("模型混合了澄清问题与半成品规则；已丢弃规则，仅保留问题。不能导出 YAML。")
+                    set_ir(result.ir, source="ollama", run=result.run.model_dump(mode="json"), request_text=user_request)
+                    if result.run.parse_status in {"normalized", "grounding_block"}:
+                        st.warning("候选规则未通过澄清/证据约束；已丢弃动作，仅保留问题。不能导出 YAML。")
                     else:
                         st.success(f"结构化输出成功 · {result.run.latency_ms / 1000:.1f}s")
                 else:
@@ -252,7 +258,9 @@ with check_tab:
         st.info("尚无可检查的规则。")
     else:
         ir_value = st.session_state["ir"]
-        issues = validate_automation(ir_value, inventory)
+        issues = validate_automation(ir_value, inventory) + grounding_issues(
+            ir_value, st.session_state.get("source_request", user_request), inventory
+        )
         blocking = [issue for issue in issues if issue.severity.value == "blocking"]
         warnings = [issue for issue in issues if issue.severity.value == "warning"]
         c1, c2, c3 = st.columns(3)
@@ -281,6 +289,9 @@ with check_tab:
             try:
                 states = json.loads(states_text)
                 context = SimulationInput(states=states, manual=True, now_time="19:00:00", sun_event="sunset")
+                if has_blocking_issues(issues):
+                    st.error("仍有阻断问题，不能仿真可执行规则。")
+                    st.stop()
                 result = simulate(ir_value, inventory, context)
                 st.session_state["simulation"] = result
                 st.session_state["states_json"] = states_text
@@ -304,7 +315,9 @@ with export_tab:
         st.info("尚无可导出的规则。")
     else:
         ir_value = st.session_state["ir"]
-        issues = validate_automation(ir_value, inventory)
+        issues = validate_automation(ir_value, inventory) + grounding_issues(
+            ir_value, st.session_state.get("source_request", user_request), inventory
+        )
         if has_blocking_issues(issues):
             st.error("仍有阻断问题，YAML 下载已关闭。")
         else:

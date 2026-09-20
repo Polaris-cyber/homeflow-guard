@@ -1,0 +1,30 @@
+{
+  "case_id": "S06",
+  "pipeline": "baseline",
+  "raw_output": "alias: 晚上十一点关闭卧室主灯\ndescription: 在晚上十一点时关闭卧室主灯\ntriggers:\n  - platform: time\n    at: '23:00'\nconditions: []\nactions:\n  - service: light.turn_off\n    target:\n      entity_id: light.bedroom_main\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:53.189361Z",
+    "latency_ms": 1326,
+    "raw_output_sha256": "2712cee27e87f31c58879a42d065f0ce37a5c3bbdff79408019855f945a73493",
+    "attempt_output_sha256": [
+      "2712cee27e87f31c58879a42d065f0ce37a5c3bbdff79408019855f945a73493"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1129,
+    "output_tokens": 78,
+    "error": null
+  }
+}

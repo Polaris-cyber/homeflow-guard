@@ -10,10 +10,11 @@ from typing import Any
 import requests
 from pydantic import ValidationError
 
+from .grounding import grounding_issues
 from .models import AutomationIR, CompilationResult, DeviceInventory, ModelRun
 
 
-PROMPT_VERSION = "compiler-v1.0"
+PROMPT_VERSION = "compiler-v1.0.1-post-test-safety"
 BASELINE_PROMPT_VERSION = "baseline-v1.0"
 SCHEMA_VERSION = "automation-ir-v0.4"
 DEFAULT_OLLAMA_URL = "http://127.0.0.1:11434"
@@ -169,6 +170,22 @@ def compile_request(
             raw_output = response["message"]["content"]
             attempt_hashes.append(hashlib.sha256(raw_output.encode("utf-8")).hexdigest())
             ir = AutomationIR.model_validate_json(raw_output)
+            evidence_issues = grounding_issues(ir, user_request, inventory)
+            parse_status = "success"
+            run_error = None
+            if evidence_issues:
+                questions = list(dict.fromkeys(issue.message for issue in evidence_issues))
+                ir = AutomationIR(
+                    name="需要澄清",
+                    description="候选动作缺少原始需求证据；程序已丢弃规则。",
+                    triggers=[],
+                    conditions=[],
+                    actions=[],
+                    clarification_questions=questions,
+                    risk_acknowledgements=[],
+                )
+                parse_status = "grounding_block"
+                run_error = "；".join(f"{issue.code}: {issue.message}" for issue in evidence_issues)
             elapsed_ms = round((time.perf_counter() - started) * 1000)
             return CompilationResult(
                 ir=ir,
@@ -182,8 +199,9 @@ def compile_request(
                     raw_output=raw_output,
                     attempt_hashes=attempt_hashes,
                     retries=attempt,
-                    parse_status="success",
+                    parse_status=parse_status,
                     response=response,
+                    error=run_error,
                 ),
             )
         except (CompilerError, KeyError, json.JSONDecodeError, ValidationError, ValueError) as exc:

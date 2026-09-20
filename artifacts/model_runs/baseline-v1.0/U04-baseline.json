@@ -1,0 +1,30 @@
+{
+  "case_id": "U04",
+  "pipeline": "baseline",
+  "raw_output": "alias: 玄关有人时设置客厅灯亮度\ndescription: 当玄关检测到有人时，将客厅主灯的亮度设置为300。\ntriggers:\n  - platform: state\n    entity_id: binary_sensor.hall_motion\n    to: 'on'\nconditions: []\nactions:\n  - service: light.turn_on\n    target:\n      entity_id: light.living_main\n    data:\n      brightness: 300\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:33.897327Z",
+    "latency_ms": 1780,
+    "raw_output_sha256": "ec181506135e41db76b39d3186c6cb67eb504cab39bffce67cb2035a09257443",
+    "attempt_output_sha256": [
+      "ec181506135e41db76b39d3186c6cb67eb504cab39bffce67cb2035a09257443"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1135,
+    "output_tokens": 105,
+    "error": null
+  }
+}

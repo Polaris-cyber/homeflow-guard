@@ -1,0 +1,30 @@
+{
+  "case_id": "U05",
+  "pipeline": "baseline",
+  "raw_output": "alias: 客厅温度调节\ndescription: 当客厅温度低于18度时，将空调设置为32度\ntriggers:\n  - platform: state\n    entity_id: climate.living_ac\n    to: '18'\nconditions: []\nactions:\n  - service: climate.set_temperature\n    data:\n      temperature: 32\n    target:\n      entity_id: climate.living_ac\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:35.715534Z",
+    "latency_ms": 1633,
+    "raw_output_sha256": "3cd37bdc4af256af71fd57a289c2cb2a43b38ab2f62cd06cf111111480f81f89",
+    "attempt_output_sha256": [
+      "3cd37bdc4af256af71fd57a289c2cb2a43b38ab2f62cd06cf111111480f81f89"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1137,
+    "output_tokens": 96,
+    "error": null
+  }
+}

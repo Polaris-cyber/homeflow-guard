@@ -1,0 +1,41 @@
+{
+  "case_id": "R07",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"矛盾的音箱操作\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"用户请求同时播放和暂停客厅音箱，这两个操作是矛盾的。请明确具体希望执行的操作（播放或暂停）。\",\n    \"如果用户希望在特定时间播放或暂停，请提供具体的播放内容或媒体 URL。\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "矛盾的音箱操作",
+    "description": "",
+    "triggers": [],
+    "conditions": [],
+    "actions": [],
+    "clarification_questions": [
+      "用户请求同时播放和暂停客厅音箱，这两个操作是矛盾的。请明确具体希望执行的操作（播放或暂停）。",
+      "如果用户希望在特定时间播放或暂停，请提供具体的播放内容或媒体 URL。"
+    ],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:42.069865Z",
+    "latency_ms": 1823,
+    "raw_output_sha256": "13bd898d58ec669cb607a54f4d0d495181702eeea696fe416ca474147d88473b",
+    "attempt_output_sha256": [
+      "13bd898d58ec669cb607a54f4d0d495181702eeea696fe416ca474147d88473b"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2441,
+    "output_tokens": 96,
+    "error": null
+  }
+}

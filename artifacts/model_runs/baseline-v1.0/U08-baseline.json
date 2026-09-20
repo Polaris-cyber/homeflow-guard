@@ -1,0 +1,31 @@
+{
+  "case_id": "U08",
+  "pipeline": "baseline",
+  "raw_output": "alias: 日出时调整客厅窗帘\ndescription: 在日出时将客厅窗帘的位置设置为120\ntriggers:\n  - platform: sun\n    event: sunrise\nconditions: []\nactions:\n  - service: cover.set_cover_position\n    data:\n      entity_id: cover.living_curtain\n      position: 120\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:40.663135Z",
+    "latency_ms": 1510,
+    "raw_output_sha256": "f646e7db940cc12d6b0ccd419d03b49c2aa8f3a03a51274a33e1b360a00f435c",
+    "attempt_output_sha256": [
+      "f646e7db940cc12d6b0ccd419d03b49c2aa8f3a03a51274a33e1b360a00f435c"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1134,
+    "output_tokens": 84,
+    "error": null,
+    "conversion_error": "1 validation error for AutomationIR\nactions.0.entity_id\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type"
+  }
+}

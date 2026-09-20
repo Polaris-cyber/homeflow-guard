@@ -1,0 +1,59 @@
+{
+  "case_id": "M06",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"早上八点前卧室有人活动开灯\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.bedroom_motion\",\n      \"to_state\": \"on\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"time\",\n      \"before\": \"08:00:00\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.bedroom_main\",\n      \"service\": \"light.turn_on\",\n      \"parameters\": {\n        \"brightness\": 80\n      }\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "早上八点前卧室有人活动开灯",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "state",
+        "entity_id": "binary_sensor.bedroom_motion",
+        "from_state": null,
+        "to_state": "on"
+      }
+    ],
+    "conditions": [
+      {
+        "condition_type": "time",
+        "after": null,
+        "before": "08:00:00"
+      }
+    ],
+    "actions": [
+      {
+        "entity_id": "light.bedroom_main",
+        "service": "light.turn_on",
+        "parameters": {
+          "brightness": 80
+        }
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:06:50.312103Z",
+    "latency_ms": 2642,
+    "raw_output_sha256": "7b1feecdcafa3039df06f24b5255ba27f1adc0ed07ccda9bcf30ad6befabd897",
+    "attempt_output_sha256": [
+      "7b1feecdcafa3039df06f24b5255ba27f1adc0ed07ccda9bcf30ad6befabd897"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2446,
+    "output_tokens": 152,
+    "error": null
+  }
+}

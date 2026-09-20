@@ -1,0 +1,40 @@
+{
+  "case_id": "A04",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"早上打开窗帘\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"请明确具体时间（例如早上七点）和需要打开的窗帘位置（例如客厅窗帘或卧室窗帘）。\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "早上打开窗帘",
+    "description": "",
+    "triggers": [],
+    "conditions": [],
+    "actions": [],
+    "clarification_questions": [
+      "请明确具体时间（例如早上七点）和需要打开的窗帘位置（例如客厅窗帘或卧室窗帘）。"
+    ],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:04.687521Z",
+    "latency_ms": 1343,
+    "raw_output_sha256": "8d1f2fcdc06c3487867da076d754bb6068a28d78b70e31bd3ee45f554962e89a",
+    "attempt_output_sha256": [
+      "8d1f2fcdc06c3487867da076d754bb6068a28d78b70e31bd3ee45f554962e89a"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2434,
+    "output_tokens": 72,
+    "error": null
+  }
+}

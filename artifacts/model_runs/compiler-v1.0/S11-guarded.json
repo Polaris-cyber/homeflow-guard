@@ -1,0 +1,49 @@
+{
+  "case_id": "S11",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"晚上十点半锁上入户门\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"at\": \"22:30:00\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"lock.front_door\",\n      \"service\": \"lock.lock\",\n      \"parameters\": {}\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "晚上十点半锁上入户门",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "time",
+        "at": "22:30:00"
+      }
+    ],
+    "conditions": [],
+    "actions": [
+      {
+        "entity_id": "lock.front_door",
+        "service": "lock.lock",
+        "parameters": {}
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:06:39.631846Z",
+    "latency_ms": 1950,
+    "raw_output_sha256": "781c4084d7c58744268b6defabd0197f1913aa5d802069ef98c36a456b2ef225",
+    "attempt_output_sha256": [
+      "781c4084d7c58744268b6defabd0197f1913aa5d802069ef98c36a456b2ef225"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2438,
+    "output_tokens": 104,
+    "error": null
+  }
+}

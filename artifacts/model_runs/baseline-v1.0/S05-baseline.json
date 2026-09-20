@@ -1,0 +1,30 @@
+{
+  "case_id": "S05",
+  "pipeline": "baseline",
+  "raw_output": "alias: 每天早上七点半打开卧室窗帘\ndescription: 每天早上七点半自动打开卧室窗帘\nmode: single\ntriggers:\n  - platform: time\n    at: \"07:30\"\nconditions: []\nactions:\n  - service: cover.open_cover\n    target:\n      entity_id: cover.bedroom_curtain",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:51.660906Z",
+    "latency_ms": 1486,
+    "raw_output_sha256": "af201761e8f2b549cbfad41a2ef3881e4ea5b0ee27952ea86e7fc3587cc8507c",
+    "attempt_output_sha256": [
+      "af201761e8f2b549cbfad41a2ef3881e4ea5b0ee27952ea86e7fc3587cc8507c"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1129,
+    "output_tokens": 82,
+    "error": null
+  }
+}

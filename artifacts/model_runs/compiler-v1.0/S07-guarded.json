@@ -1,0 +1,51 @@
+{
+  "case_id": "S07",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"客厅窗户打开时暂停音箱\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.living_window\",\n      \"to_state\": \"on\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"media_player.living_speaker\",\n      \"service\": \"media_player.media_pause\",\n      \"parameters\": {}\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "客厅窗户打开时暂停音箱",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "state",
+        "entity_id": "binary_sensor.living_window",
+        "from_state": null,
+        "to_state": "on"
+      }
+    ],
+    "conditions": [],
+    "actions": [
+      {
+        "entity_id": "media_player.living_speaker",
+        "service": "media_player.media_pause",
+        "parameters": {}
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:06:31.624920Z",
+    "latency_ms": 2069,
+    "raw_output_sha256": "5aff68ae4f922701cd7dd9ec7df584944d51ca47559a18544b9de41bec290bde",
+    "attempt_output_sha256": [
+      "5aff68ae4f922701cd7dd9ec7df584944d51ca47559a18544b9de41bec290bde"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2438,
+    "output_tokens": 114,
+    "error": null
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "U10",
+  "pipeline": "baseline",
+  "raw_output": "alias: 玄关有人时打开客厅灯并设置色温3000\ndescription: 当玄关检测到有人时，自动打开客厅灯并设置色温为3000K\ntriggers:\n  - platform: state\n    entity_id: binary_sensor.hall_motion\n    to: 'on'\nconditions: []\nactions:\n  - service: light.turn_on\n    target:\n      entity_id: light.living_main\n    data:\n      color_temp: 3000\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:43.858523Z",
+    "latency_ms": 2030,
+    "raw_output_sha256": "9ca250cd3b7cd1713184b63e3c09f80ea892211ffbc613d141028772c61e65a3",
+    "attempt_output_sha256": [
+      "9ca250cd3b7cd1713184b63e3c09f80ea892211ffbc613d141028772c61e65a3"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1137,
+    "output_tokens": 117,
+    "error": null
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "case_id": "M04",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"玄关有人时开灯\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.hall_motion\",\n      \"to_state\": \"on\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"time\",\n      \"after\": \"18:00:00\",\n      \"before\": \"23:00:00\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.hall\",\n      \"service\": \"light.turn_on\"\n    },\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_on\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "玄关有人时开灯",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "state",
+        "entity_id": "binary_sensor.hall_motion",
+        "from_state": null,
+        "to_state": "on"
+      }
+    ],
+    "conditions": [
+      {
+        "condition_type": "time",
+        "after": "18:00:00",
+        "before": "23:00:00"
+      }
+    ],
+    "actions": [
+      {
+        "entity_id": "light.hall",
+        "service": "light.turn_on",
+        "parameters": {}
+      },
+      {
+        "entity_id": "light.living_main",
+        "service": "light.turn_on",
+        "parameters": {}
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:06:44.007625Z",
+    "latency_ms": 2912,
+    "raw_output_sha256": "9e294acdd6d76ba0164e4a2733a7e863e3a58dcc294a6d2ed81ecc69f25c912c",
+    "attempt_output_sha256": [
+      "9e294acdd6d76ba0164e4a2733a7e863e3a58dcc294a6d2ed81ecc69f25c912c"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2450,
+    "output_tokens": 171,
+    "error": null
+  }
+}

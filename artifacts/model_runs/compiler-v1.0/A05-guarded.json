@@ -1,0 +1,73 @@
+{
+  "case_id": "A05",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"有人时调暗灯光\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.hall_motion\",\n      \"to_state\": \"on\"\n    },\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.bedroom_motion\",\n      \"to_state\": \"on\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_on\",\n      \"parameters\": {\n        \"brightness\": 100\n      }\n    },\n    {\n      \"entity_id\": \"light.bedroom_main\",\n      \"service\": \"light.turn_on\",\n      \"parameters\": {\n        \"brightness\": 100\n      }\n    },\n    {\n      \"entity_id\": \"light.hall\",\n      \"service\": \"light.turn_on\",\n      \"parameters\": {\n        \"brightness\": 100\n      }\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": [],\n  \"description\": \"当检测到有人时，将客厅、卧室和玄关的灯光调暗。\"\n}",
+  "effective_ir": {
+    "name": "有人时调暗灯光",
+    "description": "当检测到有人时，将客厅、卧室和玄关的灯光调暗。",
+    "triggers": [
+      {
+        "trigger_type": "state",
+        "entity_id": "binary_sensor.hall_motion",
+        "from_state": null,
+        "to_state": "on"
+      },
+      {
+        "trigger_type": "state",
+        "entity_id": "binary_sensor.bedroom_motion",
+        "from_state": null,
+        "to_state": "on"
+      }
+    ],
+    "conditions": [],
+    "actions": [
+      {
+        "entity_id": "light.living_main",
+        "service": "light.turn_on",
+        "parameters": {
+          "brightness": 100
+        }
+      },
+      {
+        "entity_id": "light.bedroom_main",
+        "service": "light.turn_on",
+        "parameters": {
+          "brightness": 100
+        }
+      },
+      {
+        "entity_id": "light.hall",
+        "service": "light.turn_on",
+        "parameters": {
+          "brightness": 100
+        }
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:06.065451Z",
+    "latency_ms": 3927,
+    "raw_output_sha256": "bb8998679fc7945a113ced445fcc7bc9debe6a7ecc644c6a51e7f12a0edb90b6",
+    "attempt_output_sha256": [
+      "bb8998679fc7945a113ced445fcc7bc9debe6a7ecc644c6a51e7f12a0edb90b6"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2437,
+    "output_tokens": 256,
+    "error": null
+  }
+}

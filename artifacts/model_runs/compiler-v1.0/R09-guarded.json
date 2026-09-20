@@ -1,0 +1,51 @@
+{
+  "case_id": "R09",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"卧室主灯关闭触发切换\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"light.bedroom_main\",\n      \"to_state\": \"off\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"light.bedroom_main\",\n      \"service\": \"light.toggle\",\n      \"parameters\": {}\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "卧室主灯关闭触发切换",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "state",
+        "entity_id": "light.bedroom_main",
+        "from_state": null,
+        "to_state": "off"
+      }
+    ],
+    "conditions": [],
+    "actions": [
+      {
+        "entity_id": "light.bedroom_main",
+        "service": "light.toggle",
+        "parameters": {}
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:45.891035Z",
+    "latency_ms": 1948,
+    "raw_output_sha256": "7037f96bec560ba6fdd7c424fe5e72e882cfc5fedfba54b1b2ba608de5fdeca6",
+    "attempt_output_sha256": [
+      "7037f96bec560ba6fdd7c424fe5e72e882cfc5fedfba54b1b2ba608de5fdeca6"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2441,
+    "output_tokens": 109,
+    "error": null
+  }
+}

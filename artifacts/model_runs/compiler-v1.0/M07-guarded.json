@@ -1,0 +1,60 @@
+{
+  "case_id": "M07",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"晚上十点关闭客厅灯并暂停音箱\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"at\": \"22:00:00\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"state\",\n      \"entity_id\": \"binary_sensor.living_window\",\n      \"state\": \"off\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"media_player.living_speaker\",\n      \"service\": \"media_player.media_pause\"\n    },\n    {\n      \"entity_id\": \"light.living_main\",\n      \"service\": \"light.turn_off\"\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "晚上十点关闭客厅灯并暂停音箱",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "time",
+        "at": "22:00:00"
+      }
+    ],
+    "conditions": [
+      {
+        "condition_type": "state",
+        "entity_id": "binary_sensor.living_window",
+        "state": "off"
+      }
+    ],
+    "actions": [
+      {
+        "entity_id": "media_player.living_speaker",
+        "service": "media_player.media_pause",
+        "parameters": {}
+      },
+      {
+        "entity_id": "light.living_main",
+        "service": "light.turn_off",
+        "parameters": {}
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:06:52.981401Z",
+    "latency_ms": 2818,
+    "raw_output_sha256": "f245758392da19117b3174ce81b97847c7a0aad187b2f38fafb382a8b2516980",
+    "attempt_output_sha256": [
+      "f245758392da19117b3174ce81b97847c7a0aad187b2f38fafb382a8b2516980"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2446,
+    "output_tokens": 163,
+    "error": null
+  }
+}

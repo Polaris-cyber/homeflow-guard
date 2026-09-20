@@ -1,0 +1,41 @@
+{
+  "case_id": "A07",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"温度合适关闭空调\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"温度合适的范围是多少？\",\n    \"需要关闭哪个房间的空调？\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "温度合适关闭空调",
+    "description": "",
+    "triggers": [],
+    "conditions": [],
+    "actions": [],
+    "clarification_questions": [
+      "温度合适的范围是多少？",
+      "需要关闭哪个房间的空调？"
+    ],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:11.497182Z",
+    "latency_ms": 1292,
+    "raw_output_sha256": "ec137aeb08f72a183fb33e786f553c05583efb912731e948327161aac6184b6f",
+    "attempt_output_sha256": [
+      "ec137aeb08f72a183fb33e786f553c05583efb912731e948327161aac6184b6f"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2436,
+    "output_tokens": 64,
+    "error": null
+  }
+}

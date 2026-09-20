@@ -7,11 +7,12 @@
 ## 当前真实状态
 
 - 已完成：设备清单校验、结构化 AutomationIR、能力与安全检查、敏感动作确认、状态仿真、YAML 编译、Streamlit 界面、50 条合成评测案例、评测脚本和自动化测试。
-- 已验证：本地核心测试、参考 fixture、Qwen3 14B 开发集、同模型直接 YAML 基线、30 次稳定性运行与 8 条冻结演示案例；Prompt v1.0 已在锁定测试集运行前冻结。
-- 尚未完成：35 条锁定测试集、3 名外部测试者可用性测试、公开 Demo/GitHub 链接仍待完成。
+- 已验证：本地核心测试、参考 fixture、Qwen3 14B 开发集、同模型直接 YAML 基线、30 次稳定性运行与 8 条冻结演示案例；Prompt v1.0 冻结后首次完成 35 条测试集评测。
+- 尚未完成：3 名外部测试者可用性测试、Home Assistant 隔离容器检查、公开 Demo/GitHub 链接。
+- 测试后发现 A05 的“未指定灯具/亮度却擅自生成动作”问题，已加入 v1.0.1 保守证据拦截并通过回归测试；补丁版没有独立测试集成绩。
 - 50 条合成场景已由项目负责人两轮逐条复核；这不是对真实用户数据的标注。严禁把 fixture 自检数字描述成模型效果。
 
-2026-09-18 的旧标注开发实验保留在仓库供审计。第一轮人工复核纠正了部分标准答案，因此旧指标不能代表当前版本。2026-09-20 修订后开发集实测与冻结输入见[评测记录](docs/evaluation_report.md)和 `artifacts/freeze_v1.json`；两者都不是 35 条锁定测试集成绩。
+2026-09-18 的旧标注开发实验保留在仓库供审计。2026-09-20 冻结版 v1.0 的 35 条测试集结果：受控流程 31/35，直接 YAML 基线 14/35；结构原样通过率 33/35、澄清识别率 4/5 未达预设目标。样本全为合成场景，不是用户效果。详情见[评测记录](docs/evaluation_report.md)与 `artifacts/freeze_v1.json`。
 
 ## 为什么不是聊天套壳
 
@@ -129,7 +130,7 @@ python scripts/evaluate.py --mode ollama --pipeline both --split dev --model qwe
 开发集 guarded 运行完成后，可把 8 条实际本地模型输出固化为不联网的公开演示案例：
 
 ```powershell
-python scripts/freeze_demo_cases.py --prompt-version compiler-dev-v0.8
+python scripts/freeze_demo_cases.py --prompt-version compiler-dev-v0.12-threshold-schema
 ```
 
 固化文件会保存模型标签、digest、Prompt 版本、延迟和输出哈希；应用会明确标注它不是实时模型调用。
@@ -140,13 +141,14 @@ python scripts/freeze_demo_cases.py --prompt-version compiler-dev-v0.8
 python scripts/stability_test.py --model qwen3:14b-q4_K_M --repeats 3
 ```
 
-正式测试集在标签、Prompt、基线 Prompt、设备清单和模型 digest 全部冻结后运行，不加 `--allow-pending-labels`；脚本会核对 `artifacts/freeze_v1.json`：
+锁定测试集已于 2026-09-20 在冻结提交 `8ad9c0b` 上运行一次。不要对 v1.0.1 补丁重跑这 35 条并把结果称为独立测试。要复核已保存的原始输出，请使用不会调用模型的重算命令：
 
 ```powershell
-python scripts/evaluate.py --mode ollama --pipeline both --split test --model qwen3:14b-q4_K_M
+python scripts/rescore_runs.py --run-version compiler-v1.0 --pipeline guarded --split test
+python scripts/rescore_runs.py --run-version baseline-v1.0 --pipeline baseline --split test
 ```
 
-原始运行记录保存在 `artifacts/model_runs/`；汇总生成 `latest_evaluation.json` 与 CSV。指标只适用于公开合成集和当次硬件环境。
+原始运行记录保存在 `artifacts/model_runs/`；冻结版首轮测试汇总与逐例 CSV 保存在 `artifacts/evaluations/`。指标只适用于公开合成集和当次硬件环境。
 
 旧标注开发集结果由 `artifacts/evaluations/rescored-compiler-dev-v0.json` 和 `rescored-baseline-v1.json` 从保存的原始输出重算；稳定性记录位于 `artifacts/latest_stability.json`。它们仅供迭代审计，不能作为当前冻结版成绩。当前开发集 v0.12 与基线的重算报告也单独归档在 `artifacts/evaluations/`。
 

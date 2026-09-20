@@ -1,0 +1,30 @@
+{
+  "case_id": "S07",
+  "pipeline": "baseline",
+  "raw_output": "alias: 客厅窗户打开时暂停客厅音箱\ndescription: 当客厅窗户打开时，暂停客厅音箱的播放。\ntriggers:\n  - platform: state\n    entity_id: binary_sensor.living_window\n    to: 'on'\nconditions: []\nactions:\n  - service: media_player.media_pause\n    target:\n      entity_id: media_player.living_speaker\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:54.552860Z",
+    "latency_ms": 1459,
+    "raw_output_sha256": "a48552ec31d8a0ec3739076f7435c13e78669c6628680e59bd437514a605d14b",
+    "attempt_output_sha256": [
+      "a48552ec31d8a0ec3739076f7435c13e78669c6628680e59bd437514a605d14b"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1129,
+    "output_tokens": 88,
+    "error": null
+  }
+}

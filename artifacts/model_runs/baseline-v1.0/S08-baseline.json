@@ -1,0 +1,30 @@
+{
+  "case_id": "S08",
+  "pipeline": "baseline",
+  "raw_output": "alias: 日出时打开客厅窗帘\ndescription: 在日出时自动打开客厅窗帘\ntriggers:\n  - platform: sun\n    event: sunrise\nconditions: []\nactions:\n  - service: cover.open_cover\n    target:\n      entity_id: cover.living_curtain\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:56.041569Z",
+    "latency_ms": 1288,
+    "raw_output_sha256": "ff911722afb68c60b340edf2a06de9c84c25cf3f252559eaaef607e9c725090e",
+    "attempt_output_sha256": [
+      "ff911722afb68c60b340edf2a06de9c84c25cf3f252559eaaef607e9c725090e"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1128,
+    "output_tokens": 70,
+    "error": null
+  }
+}

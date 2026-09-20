@@ -1,0 +1,42 @@
+{
+  "case_id": "A08",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"离开后关闭设备\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"您希望在什么情况下判定为“离开”？例如：检测到无人、门锁关闭、所有传感器无活动等。\",\n    \"您希望关闭哪些设备？例如：客厅灯、卧室灯、空调、窗帘等。\",\n    \"是否需要设置关闭设备的延迟时间？\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "离开后关闭设备",
+    "description": "",
+    "triggers": [],
+    "conditions": [],
+    "actions": [],
+    "clarification_questions": [
+      "您希望在什么情况下判定为“离开”？例如：检测到无人、门锁关闭、所有传感器无活动等。",
+      "您希望关闭哪些设备？例如：客厅灯、卧室灯、空调、窗帘等。",
+      "是否需要设置关闭设备的延迟时间？"
+    ],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:12.811637Z",
+    "latency_ms": 1904,
+    "raw_output_sha256": "9b560c324ff442e76b2542c48b230456f6f54ddfb440654707dce5c8b9488fc1",
+    "attempt_output_sha256": [
+      "9b560c324ff442e76b2542c48b230456f6f54ddfb440654707dce5c8b9488fc1"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2438,
+    "output_tokens": 108,
+    "error": null
+  }
+}

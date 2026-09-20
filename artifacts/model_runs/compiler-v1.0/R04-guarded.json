@@ -1,0 +1,40 @@
+{
+  "case_id": "R04",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"早上八点同时开关客厅空调\",\n  \"triggers\": [],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"请明确说明您希望在早上八点对客厅空调执行什么操作？例如：开启、关闭，或同时执行其他操作？\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "早上八点同时开关客厅空调",
+    "description": "",
+    "triggers": [],
+    "conditions": [],
+    "actions": [],
+    "clarification_questions": [
+      "请明确说明您希望在早上八点对客厅空调执行什么操作？例如：开启、关闭，或同时执行其他操作？"
+    ],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:31.670523Z",
+    "latency_ms": 1541,
+    "raw_output_sha256": "b95baed969a9d3dce1f6a948bfd3a42a72887e6ec0e25cb7e649273c87e1de5a",
+    "attempt_output_sha256": [
+      "b95baed969a9d3dce1f6a948bfd3a42a72887e6ec0e25cb7e649273c87e1de5a"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2438,
+    "output_tokens": 80,
+    "error": null
+  }
+}

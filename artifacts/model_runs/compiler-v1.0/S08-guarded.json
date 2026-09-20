@@ -1,0 +1,50 @@
+{
+  "case_id": "S08",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"日出时打开客厅窗帘\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"sun\",\n      \"event\": \"sunrise\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [\n    {\n      \"entity_id\": \"cover.living_curtain\",\n      \"service\": \"cover.open_cover\",\n      \"parameters\": {}\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "日出时打开客厅窗帘",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "sun",
+        "event": "sunrise",
+        "offset": null
+      }
+    ],
+    "conditions": [],
+    "actions": [
+      {
+        "entity_id": "cover.living_curtain",
+        "service": "cover.open_cover",
+        "parameters": {}
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:06:33.703148Z",
+    "latency_ms": 1879,
+    "raw_output_sha256": "cfaedb7318f8171bb00ca3b5b75a0a25b2f3bff9ce6527cfe3e53155d280b187",
+    "attempt_output_sha256": [
+      "cfaedb7318f8171bb00ca3b5b75a0a25b2f3bff9ce6527cfe3e53155d280b187"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2437,
+    "output_tokens": 101,
+    "error": null
+  }
+}

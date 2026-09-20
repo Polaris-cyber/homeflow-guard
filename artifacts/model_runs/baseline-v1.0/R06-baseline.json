@@ -1,0 +1,30 @@
+{
+  "case_id": "R06",
+  "pipeline": "baseline",
+  "raw_output": "alias: 玄关有人后锁门再解锁门\ndescription: 检测到玄关有人后先锁门再解锁门\nmode: single\ntriggers:\n  - platform: state\n    entity_id: binary_sensor.hall_motion\n    to: 'on'\nconditions: []\nactions:\n  - service: lock.lock\n    target:\n      entity_id: lock.front_door\n  - service: lock.unlock\n    target:\n      entity_id: lock.front_door",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:49.438036Z",
+    "latency_ms": 1892,
+    "raw_output_sha256": "b584af3cb1c3286374f5e845ff0c79560f80845649bb6d9c1ac4be2a80100133",
+    "attempt_output_sha256": [
+      "b584af3cb1c3286374f5e845ff0c79560f80845649bb6d9c1ac4be2a80100133"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1134,
+    "output_tokens": 107,
+    "error": null
+  }
+}

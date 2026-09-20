@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 from homeflow.evaluation import aggregate_scores, load_cases, score_prediction, validate_dataset
@@ -17,6 +18,14 @@ def test_dataset_shape_and_review_status():
     assert not validate_dataset(cases)
     statuses = {item["review_status"] for item in cases}
     assert statuses in ({"pending_user_review"}, {"user_reviewed"})
+
+
+def test_all_frozen_public_demo_rules_load_under_current_schema():
+    cases = json.loads((ROOT / "data" / "demo_model_cases.json").read_text(encoding="utf-8"))
+    assert len(cases) == 8
+    for case in cases:
+        AutomationIR.model_validate(case["ir"])
+        assert case["model_run"]["model_digest"]
 
 
 def test_reference_fixture_scores_expected_pipeline_behavior():
@@ -71,7 +80,10 @@ def test_missing_ir_counts_expected_slots_as_false_negatives(inventory):
     assert aggregate_scores([row], label="test")["slot_micro_f1"] == 0
 
 
-def test_frozen_inputs_match_and_reject_other_model():
+def test_frozen_test_run_rejects_post_test_workflow_change():
     digest = "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8"
-    assert not verify_frozen_inputs("qwen3:14b-q4_K_M", digest)
+    assert any(
+        "prompt_version:" in item
+        for item in verify_frozen_inputs("qwen3:14b-q4_K_M", digest)
+    )
     assert any("model:" in item for item in verify_frozen_inputs("other:model", digest))

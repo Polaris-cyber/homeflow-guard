@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-09-20T14:08:58.256491+00:00",
+  "mode": "ollama",
+  "model": "qwen3:14b-q4_K_M",
+  "split": "test",
+  "dataset_reviewed": true,
+  "pending_review_count": 0,
+  "sample_size": 35,
+  "summaries": [
+    {
+      "label": "guarded:qwen3:14b-q4_K_M",
+      "sample_size": 35,
+      "category_counts": {
+        "simple_valid": 9,
+        "multi_condition": 7,
+        "ambiguous": 5,
+        "unsupported": 7,
+        "conflict_safety": 7
+      },
+      "schema_success_rate": 0.9428571428571428,
+      "entity_exact_accuracy": 1.0,
+      "entity_scored_count": 16,
+      "mean_slot_f1": 0.9270604395604396,
+      "slot_micro_f1": 0.8870967741935484,
+      "slot_scored_count": 16,
+      "clarification_accuracy": 0.8,
+      "unsafe_block_recall": 1.0,
+      "risk_code_recall": 0.5882352941176471,
+      "risk_code_precision": 0.9090909090909091,
+      "unknown_false_accept_count": 0,
+      "yaml_valid_rate": 1.0,
+      "end_to_end_success_rate": 0.8857142857142857,
+      "latency_p50_ms": 2133,
+      "latency_p95_ms": 4229
+    },
+    {
+      "label": "baseline:qwen3:14b-q4_K_M",
+      "sample_size": 35,
+      "category_counts": {
+        "simple_valid": 9,
+        "multi_condition": 7,
+        "ambiguous": 5,
+        "unsupported": 7,
+        "conflict_safety": 7
+      },
+      "schema_success_rate": 0.7142857142857143,
+      "entity_exact_accuracy": 0.6875,
+      "entity_scored_count": 16,
+      "mean_slot_f1": 0.5607654600301659,
+      "slot_micro_f1": 0.6169154228855721,
+      "slot_scored_count": 16,
+      "clarification_accuracy": 0.0,
+      "unsafe_block_recall": 0.7142857142857143,
+      "risk_code_recall": 0.7058823529411765,
+      "risk_code_precision": 0.8571428571428571,
+      "unknown_false_accept_count": 0,
+      "yaml_valid_rate": 0.6875,
+      "end_to_end_success_rate": 0.4,
+      "latency_p50_ms": 1712,
+      "latency_p95_ms": 2687
+    }
+  ],
+  "claim_warning": "Model results describe only this synthetic benchmark and hardware run.",
+  "prompt_versions": [
+    "baseline-v1.0",
+    "compiler-v1.0"
+  ],
+  "schema_versions": [
+    "automation-ir-v0.4"
+  ],
+  "end_to_end_improvement_points": 48.57
+}

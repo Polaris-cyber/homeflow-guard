@@ -1,0 +1,31 @@
+{
+  "case_id": "M05",
+  "pipeline": "baseline",
+  "raw_output": "alias: 客厅温度与窗帘控制\ndescription: 当客厅窗户关闭且室温高于26度时，把空调设为24度并关闭窗帘。\ntriggers:\n  - platform: state\n    entity_id: binary_sensor.living_window\n    to: 'off'\n  - platform: state\n    entity_id: climate.living_ac\n    attribute: current_temperature\n    above: 26\nconditions:\n  - condition: and\n    conditions:\n      - condition: state\n        entity_id: binary_sensor.living_window\n        state: 'off'\n      - condition: state\n        entity_id: climate.living_ac\n        attribute: current_temperature\n        above: 26\nactions:\n  - service: climate.set_temperature\n    target:\n      entity_id: climate.living_ac\n    data:\n      temperature: 24\n  - service: cover.close_cover\n    target:\n      entity_id: cover.living_curtain\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:06.229040Z",
+    "latency_ms": 3197,
+    "raw_output_sha256": "af08ca8e5b303115d38759629d9b37518775ff3d1050ce7fc019a0c31e1a7240",
+    "attempt_output_sha256": [
+      "af08ca8e5b303115d38759629d9b37518775ff3d1050ce7fc019a0c31e1a7240"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1144,
+    "output_tokens": 213,
+    "error": null,
+    "conversion_error": "不支持的 condition：and"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "A06",
+  "pipeline": "baseline",
+  "raw_output": "alias: 睡觉前把家里弄舒服\ndescription: 睡觉前自动调整灯光、空调和窗帘，营造舒适的睡眠环境\ntriggers:\n  - platform: state\n    entity_id: input_boolean.sleep_mode\n    to: 'on'\nconditions: []\nactions:\n  - service: light.turn_off\n    target:\n      entity_id: light.living_main\n  - service: light.turn_off\n    target:\n      entity_id: light.hall\n  - service: light.turn_off\n    target:\n      entity_id: light.bedroom_main\n  - service: climate.set_temperature\n    data:\n      temperature: 22\n    target:\n      entity_id: climate.bedroom_ac\n  - service: cover.close_cover\n    target:\n      entity_id: cover.bedroom_curtain\n  - service: cover.close_cover\n    target:\n      entity_id: cover.living_curtain\n  - service: media_player.volume_set\n    data:\n      volume_level: 0.1\n    target:\n      entity_id: media_player.living_speaker\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:25.765085Z",
+    "latency_ms": 3537,
+    "raw_output_sha256": "37d2dc3213a20b8f9c479f830e1c88b589eb6a6cfe1dbaca19b2fb16b0d74593",
+    "attempt_output_sha256": [
+      "37d2dc3213a20b8f9c479f830e1c88b589eb6a6cfe1dbaca19b2fb16b0d74593"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1128,
+    "output_tokens": 238,
+    "error": null
+  }
+}

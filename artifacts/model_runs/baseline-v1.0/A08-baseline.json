@@ -1,0 +1,31 @@
+{
+  "case_id": "A08",
+  "pipeline": "baseline",
+  "raw_output": "alias: 离开后关闭设备\ndescription: 当用户离开时，关闭所有灯光、空调和窗帘。\ntriggers:\n  - platform: state\n    entity_id: lock.front_door\n    to: 'unlocked'\nconditions: []\nactions:\n  - service: light.turn_off\n    target:\n      entity_id:\n        - light.living_main\n        - light.bedroom_main\n        - light.hall\n  - service: climate.turn_off\n    target:\n      entity_id:\n        - climate.living_ac\n        - climate.bedroom_ac\n  - service: cover.close_cover\n    target:\n      entity_id:\n        - cover.living_curtain\n        - cover.bedroom_curtain\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:31.369478Z",
+    "latency_ms": 2505,
+    "raw_output_sha256": "8f0adf3ac8dca7889bf776cce7a44f97232da6af8c2612e09c68b4245b5c5d3f",
+    "attempt_output_sha256": [
+      "8f0adf3ac8dca7889bf776cce7a44f97232da6af8c2612e09c68b4245b5c5d3f"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1129,
+    "output_tokens": 160,
+    "error": null,
+    "conversion_error": "v1 每个动作只支持一个 entity_id"
+  }
+}

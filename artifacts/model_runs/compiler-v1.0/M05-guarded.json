@@ -1,0 +1,66 @@
+{
+  "case_id": "M05",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"客厅温度与窗帘控制\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"state\",\n      \"entity_id\": \"binary_sensor.living_window\",\n      \"to_state\": \"off\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"condition_type\": \"numeric_state\",\n      \"entity_id\": \"climate.living_ac\",\n      \"above\": 26,\n      \"below\": null,\n      \"attribute\": \"current_temperature\"\n    }\n  ],\n  \"actions\": [\n    {\n      \"entity_id\": \"climate.living_ac\",\n      \"service\": \"climate.set_temperature\",\n      \"parameters\": {\n        \"temperature\": 24\n      }\n    },\n    {\n      \"entity_id\": \"cover.living_curtain\",\n      \"service\": \"cover.close_cover\",\n      \"parameters\": {}\n    }\n  ],\n  \"clarification_questions\": [],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "客厅温度与窗帘控制",
+    "description": "",
+    "triggers": [
+      {
+        "trigger_type": "state",
+        "entity_id": "binary_sensor.living_window",
+        "from_state": null,
+        "to_state": "off"
+      }
+    ],
+    "conditions": [
+      {
+        "condition_type": "numeric_state",
+        "entity_id": "climate.living_ac",
+        "above": 26.0,
+        "below": null,
+        "attribute": "current_temperature"
+      }
+    ],
+    "actions": [
+      {
+        "entity_id": "climate.living_ac",
+        "service": "climate.set_temperature",
+        "parameters": {
+          "temperature": 24
+        }
+      },
+      {
+        "entity_id": "cover.living_curtain",
+        "service": "cover.close_cover",
+        "parameters": {}
+      }
+    ],
+    "clarification_questions": [],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:06:46.950715Z",
+    "latency_ms": 3343,
+    "raw_output_sha256": "8a1c62143554e2cd7a6e6f09708b7124b23951436dd39c373d9359a6ac819eae",
+    "attempt_output_sha256": [
+      "8a1c62143554e2cd7a6e6f09708b7124b23951436dd39c373d9359a6ac819eae"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 2453,
+    "output_tokens": 199,
+    "error": null
+  }
+}

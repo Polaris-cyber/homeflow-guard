@@ -1,0 +1,30 @@
+{
+  "case_id": "A07",
+  "pipeline": "baseline",
+  "raw_output": "alias: 温度合适就关空调\ndescription: 当温度达到设定值时关闭空调\ntriggers:\n  - platform: state\n    entity_id: climate.living_ac\n    to: 'off'\nconditions:\n  - condition: numeric_state\n    entity_id: climate.living_ac\n    attribute: current_temperature\n    value_template: \"{{ states.climate.living_ac.attributes.target_temperature }}\"\n    above: 25\nactions:\n  - service: climate.turn_off\n    target:\n      entity_id: climate.living_ac\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:29.346546Z",
+    "latency_ms": 1997,
+    "raw_output_sha256": "77d41897c71c7f2f934f6360c9f38c0bbf25d08f7e431ec403b206450addda48",
+    "attempt_output_sha256": [
+      "77d41897c71c7f2f934f6360c9f38c0bbf25d08f7e431ec403b206450addda48"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1127,
+    "output_tokens": 122,
+    "error": null
+  }
+}

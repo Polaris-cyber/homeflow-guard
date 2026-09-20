@@ -1,0 +1,31 @@
+{
+  "case_id": "M10",
+  "pipeline": "baseline",
+  "raw_output": "alias: 晚上九点后客厅温度调节\ndescription: 晚上九点后如果客厅温度低于17度且窗户关闭，开启空调并设置为22度\ntriggers:\n  - platform: time\n    at: '21:00'\nconditions:\n  - condition: and\n    conditions:\n      - condition: device_state\n        device_id: living_window\n        entity_id: binary_sensor.living_window\n        state: 'off'\n      - condition: device_state\n        device_id: living_ac\n        entity_id: climate.living_ac\n        attribute: current_temperature\n        value_template: \"{{ value | float < 17 }}\"\nactions:\n  - service: climate.turn_on\n    target:\n      entity_id: climate.living_ac\n  - service: climate.set_temperature\n    target:\n      entity_id: climate.living_ac\n    data:\n      temperature: 22\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:18.202721Z",
+    "latency_ms": 3143,
+    "raw_output_sha256": "2aa86662bbc183d3481fa49e5eaf9f4f685cdc0d856bbfd0a28cd15242b996a0",
+    "attempt_output_sha256": [
+      "2aa86662bbc183d3481fa49e5eaf9f4f685cdc0d856bbfd0a28cd15242b996a0"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1146,
+    "output_tokens": 205,
+    "error": null,
+    "conversion_error": "不支持的 condition：and"
+  }
+}

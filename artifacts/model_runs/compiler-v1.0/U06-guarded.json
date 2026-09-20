@@ -1,0 +1,41 @@
+{
+  "case_id": "U06",
+  "pipeline": "guarded",
+  "raw_output": "{\n  \"name\": \"晚上九点触发玄关人体传感器\",\n  \"triggers\": [\n    {\n      \"trigger_type\": \"time\",\n      \"at\": \"21:00:00\"\n    }\n  ],\n  \"conditions\": [],\n  \"actions\": [],\n  \"clarification_questions\": [\n    \"您希望触发什么动作？玄关人体传感器本身无法被‘打开’，请明确您希望执行的操作（例如：打开玄关灯、播放音乐等）。\"\n  ],\n  \"risk_acknowledgements\": []\n}",
+  "effective_ir": {
+    "name": "晚上九点触发玄关人体传感器",
+    "description": "",
+    "triggers": [],
+    "conditions": [],
+    "actions": [],
+    "clarification_questions": [
+      "您希望触发什么动作？玄关人体传感器本身无法被‘打开’，请明确您希望执行的操作（例如：打开玄关灯、播放音乐等）。"
+    ],
+    "risk_acknowledgements": []
+  },
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "compiler-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:07:19.199070Z",
+    "latency_ms": 3830,
+    "raw_output_sha256": "fc0800400c5d666cd1ddb6969195af7ef81dd16d4cbdafa6134602ae06701480",
+    "attempt_output_sha256": [
+      "fc0800400c5d666cd1ddb6969195af7ef81dd16d4cbdafa6134602ae06701480",
+      "fc0800400c5d666cd1ddb6969195af7ef81dd16d4cbdafa6134602ae06701480"
+    ],
+    "retries": 1,
+    "parse_status": "normalized",
+    "input_tokens": 2722,
+    "output_tokens": 116,
+    "error": "模型两次都混合了澄清问题与半成品规则；程序已丢弃规则，仅保留问题。"
+  }
+}

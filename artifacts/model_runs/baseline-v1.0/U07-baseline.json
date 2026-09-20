@@ -1,0 +1,31 @@
+{
+  "case_id": "U07",
+  "pipeline": "baseline",
+  "raw_output": "alias: 早上八点调整客厅音箱音量\ndescription: 每天早上八点将客厅音箱的音量调整到1.2\ntriggers:\n  - platform: time\n    at: '08:00'\nconditions: []\nactions:\n  - service: media_player.volume_set\n    data:\n      entity_id: media_player.living_speaker\n      volume_level: 1.2\nmode: single",
+  "effective_ir": null,
+  "run": {
+    "model": "qwen3:14b-q4_K_M",
+    "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+    "ollama_version": "0.34.1",
+    "prompt_version": "baseline-v1.0",
+    "schema_version": "automation-ir-v0.4",
+    "generation_config": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "think": false
+    },
+    "requested_at": "2026-09-20T14:08:38.887765Z",
+    "latency_ms": 1746,
+    "raw_output_sha256": "f4870e57c32845a2302efc337d0c3daa24488a17741176cf4da4573c7badc2d3",
+    "attempt_output_sha256": [
+      "f4870e57c32845a2302efc337d0c3daa24488a17741176cf4da4573c7badc2d3"
+    ],
+    "retries": 0,
+    "parse_status": "success",
+    "input_tokens": 1135,
+    "output_tokens": 98,
+    "error": null,
+    "conversion_error": "1 validation error for AutomationIR\nactions.0.entity_id\n  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type"
+  }
+}
