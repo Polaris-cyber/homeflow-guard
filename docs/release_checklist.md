@@ -37,6 +37,7 @@
 - [ ] 本机 Home Assistant stable 容器配置检查：2026-09-20 Docker Linux 引擎未连接，未能运行；不能记为已通过。
 - [x] 创建并推送公开 [GitHub 仓库](https://github.com/Polaris-cyber/homeflow-guard)。
 - [x] 配置 GitHub Actions；[运行 36423711947](https://github.com/Polaris-cyber/homeflow-guard/actions/runs/36423711947)中 Python job 与 Home Assistant stable 容器检查均通过。Python job 覆盖 Ruff、32 项 pytest 和 50 条夹具回归评测。
+- [x] 发布公开 [GitHub Release v0.1.0](https://github.com/Polaris-cyber/homeflow-guard/releases/tag/v0.1.0)，并在发布说明中列出真实指标、未达标项和产品边界。
 - [ ] 部署 Streamlit 公开样例模式。
 - [ ] 录制并上传 2–3 分钟演示视频。
 - [ ] 将最终 Demo、仓库和视频链接填回文档。
