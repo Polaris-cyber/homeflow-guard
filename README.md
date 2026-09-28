@@ -1,5 +1,7 @@
 # HomeFlow Guard
 
+[![tests](https://github.com/Polaris-cyber/homeflow-guard/actions/workflows/tests.yml/badge.svg)](https://github.com/Polaris-cyber/homeflow-guard/actions/workflows/tests.yml)
+
 把自然语言智能家居需求编译为**可检查、可仿真、可导出**的 Home Assistant 自动化。
 
 > 项目原则：模型只生成候选规则；确定性程序负责设备能力、安全约束、状态仿真和最终 YAML。
@@ -8,7 +10,7 @@
 
 - 已完成：设备清单校验、结构化 AutomationIR、能力与安全检查、敏感动作确认、状态仿真、YAML 编译、Streamlit 界面、50 条合成评测案例、评测脚本和自动化测试。
 - 已验证：本地核心测试、参考 fixture、Qwen3 14B 开发集、同模型直接 YAML 基线、30 次稳定性运行与 8 条冻结演示案例；Prompt v1.0 冻结后首次完成 35 条测试集评测。
-- 尚未完成：3 名外部测试者可用性测试、Home Assistant 隔离容器检查、公开 Demo/GitHub 链接。
+- 尚未完成：3 名外部测试者可用性测试、公开 Demo 链接和本机 Docker 检查。10 条样例 YAML 已在 GitHub CI 的 Home Assistant stable 隔离容器通过配置检查；Python CI 修复待复验。
 - 测试后发现 A05 的“未指定灯具/亮度却擅自生成动作”问题，已加入 v1.0.1 保守证据拦截并通过回归测试；补丁版没有独立测试集成绩。
 - 50 条合成场景已由项目负责人两轮逐条复核；这不是对真实用户数据的标注。严禁把 fixture 自检数字描述成模型效果。
 
