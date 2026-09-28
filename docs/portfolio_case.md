@@ -30,4 +30,4 @@
 
 ## 07 结果与边界
 
-[GitHub 仓库](https://github.com/Polaris-cyber/homeflow-guard)、公开样例 Demo〔待部署〕、演示视频〔待录制〕。公开 Demo 不调用在线模型；本地完整模式需要 Ollama。不接真实设备，只支持限定的 Home Assistant YAML 子集。3 人可用性测试尚未开展。
+[GitHub 仓库](https://github.com/Polaris-cyber/homeflow-guard)、[公开样例 Demo](https://homeflow-guard.streamlit.app/)、演示视频〔待录制〕。公开 Demo 不调用在线模型；本地完整模式需要 Ollama。不接真实设备，只支持限定的 Home Assistant YAML 子集。3 人可用性测试尚未开展。

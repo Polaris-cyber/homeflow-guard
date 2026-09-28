@@ -1,4 +1,4 @@
-# 校招申请表文案（基于冻结版真实运行；发布链接待填）
+# 校招申请表文案（基于冻结版真实运行）
 
 以下每段均低于常见的 1000 字填写上限。填写时不要把测试后补丁版当作冻结测试成绩，也不要补写未发生的用户测试。
 
@@ -20,4 +20,4 @@ HomeFlow Guard 是我与 AI 协作完成的独立项目，面向能描述家居�
 
 ## 项目与作品链接
 
-GitHub：[Polaris-cyber/homeflow-guard](https://github.com/Polaris-cyber/homeflow-guard)；公开样例 Demo：〔部署后填入〕；2–3 分钟视频：〔录制后填入〕。仓库提供原始模型输出、复算脚本、数据卡、隐私说明、失败案例和冻结提交。公开样例模式只加载固化结果，不伪装在线实时推理。
+GitHub：[Polaris-cyber/homeflow-guard](https://github.com/Polaris-cyber/homeflow-guard)；公开样例 Demo：[homeflow-guard.streamlit.app](https://homeflow-guard.streamlit.app/)；2–3 分钟视频：〔录制后填入〕。仓库提供原始模型输出、复算脚本、数据卡、隐私说明、失败案例和冻结提交。公开样例模式只加载固化结果，不伪装在线实时推理。
