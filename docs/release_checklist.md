@@ -25,7 +25,7 @@
 - [x] 冻结后首次运行 35 条测试集，保存原始输出、逐例和汇总结果；不因补丁重复宣称独立测试。
 - [x] 检查失败案例，保留 A05、S06、M05、M10 等不利结果；A05 测试后证据拦截补丁只通过回归测试。
 - [x] 从人工复核的合成案例生成 10 条代表性 YAML，并通过本地静态检查；文件保存在 `tests/ha_config/automations.yaml`。
-- [x] 10 条 YAML 已在 [GitHub CI 的 Home Assistant stable 隔离容器](https://github.com/Polaris-cyber/homeflow-guard/actions/runs/35516641491)通过配置检查。本机 Docker Linux 引擎仍未连接；不把 CI 检查写成本机手工导入。
+- [x] 10 条 YAML 已在 [GitHub CI 的 Home Assistant stable 隔离容器](https://github.com/Polaris-cyber/homeflow-guard/actions/runs/36423711947)通过配置检查。本机 Docker Linux 引擎仍未连接；不把 CI 检查写成本机手工导入。
 - [ ] 招募 3 名未参与开发者，完成 6 个测试任务并保留原始记录。
 - [ ] 用真实结果替换申请表、作品集和视频稿中的占位符。
 
@@ -36,7 +36,7 @@
 - [x] 重启 Windows 后确认虚拟化与 Docker Linux 引擎可用；`hello-world` 容器实际运行通过。
 - [ ] 本机 Home Assistant stable 容器配置检查：2026-09-20 Docker Linux 引擎未连接，未能运行；不能记为已通过。
 - [x] 创建并推送公开 [GitHub 仓库](https://github.com/Polaris-cyber/homeflow-guard)。
-- [x] 配置 GitHub Actions，首次 Home Assistant stable 容器检查通过；Python job 因 CI 装入较新版 Ruff 的新增导入排序规则失败，已固定与本地验证一致的 Ruff 0.12.0，待下一次 CI 复验。
+- [x] 配置 GitHub Actions；[运行 36423711947](https://github.com/Polaris-cyber/homeflow-guard/actions/runs/36423711947)中 Python job 与 Home Assistant stable 容器检查均通过。Python job 覆盖 Ruff、32 项 pytest 和 50 条夹具回归评测。
 - [ ] 部署 Streamlit 公开样例模式。
 - [ ] 录制并上传 2–3 分钟演示视频。
 - [ ] 将最终 Demo、仓库和视频链接填回文档。
