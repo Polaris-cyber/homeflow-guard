@@ -291,10 +291,10 @@ with check_tab:
                 context = SimulationInput(states=states, manual=True, now_time="19:00:00", sun_event="sunset")
                 if has_blocking_issues(issues):
                     st.error("仍有阻断问题，不能仿真可执行规则。")
-                    st.stop()
-                result = simulate(ir_value, inventory, context)
-                st.session_state["simulation"] = result
-                st.session_state["states_json"] = states_text
+                else:
+                    result = simulate(ir_value, inventory, context)
+                    st.session_state["simulation"] = result
+                    st.session_state["states_json"] = states_text
             except (json.JSONDecodeError, ValueError) as exc:
                 st.error(f"初始状态无效：{exc}")
         if result := st.session_state.get("simulation"):

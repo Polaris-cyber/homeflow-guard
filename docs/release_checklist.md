@@ -40,6 +40,7 @@
 - [x] 发布公开 [GitHub Release v0.1.0](https://github.com/Polaris-cyber/homeflow-guard/releases/tag/v0.1.0)，并在发布说明中列出真实指标、未达标项和产品边界。
 - [x] 部署 [Streamlit 公开样例模式](https://homeflow-guard.streamlit.app/)；2026-09-28 核验应用健康端点返回 `200 / ok`、平台健康接口返回 `200 / {"status":"ok"}`。完整交互回归来自本地 Streamlit AppTest。
 - [x] 根据 2026-09-29 部署冒烟反馈发布 v0.1.1：公开案例补入已有真实运行记录的 A02、U04、R02；新增同时包含 YAML 和验证报告的一键 ZIP 下载，并保留两个单文件入口。
+- [x] 根据 U04 线上冒烟反馈修复阻断仿真调用全局停止、导致“05 导出”空白的问题；新增界面回归，确保阻断说明继续渲染且下载保持关闭。
 - [ ] 录制并上传 2–3 分钟演示视频。
 - [x] 将最终 Demo 和仓库链接填回 README、申请表、简历和作品集文案。
 - [ ] 录制完成后将视频链接填回文档。
