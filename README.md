@@ -180,7 +180,7 @@ python -m pytest
 - 项目不接入任何真实 Home Assistant 实例，不对现实设备执行动作。
 - 导出的 YAML 在部署前必须由用户在隔离环境再次检查。
 
-详见 [隐私说明](docs/privacy.md)、[数据卡](docs/data_card.md)、[评测记录](docs/evaluation_report.md) 和 [发布清单](docs/release_checklist.md)。
+详见 [隐私说明](docs/privacy.md)、[数据卡](docs/data_card.md)、[评测记录](docs/evaluation_report.md)、[公开部署冒烟记录](docs/deployment_smoke_test.md)和[发布清单](docs/release_checklist.md)。
 
 ## 项目结构
 
