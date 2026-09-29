@@ -39,6 +39,7 @@
 - [x] 配置 GitHub Actions；[运行 36423711947](https://github.com/Polaris-cyber/homeflow-guard/actions/runs/36423711947)中 Python job 与 Home Assistant stable 容器检查均通过。Python job 覆盖 Ruff、32 项 pytest 和 50 条夹具回归评测。
 - [x] 发布公开 [GitHub Release v0.1.0](https://github.com/Polaris-cyber/homeflow-guard/releases/tag/v0.1.0)，并在发布说明中列出真实指标、未达标项和产品边界。
 - [x] 部署 [Streamlit 公开样例模式](https://homeflow-guard.streamlit.app/)；2026-09-28 核验应用健康端点返回 `200 / ok`、平台健康接口返回 `200 / {"status":"ok"}`。完整交互回归来自本地 Streamlit AppTest。
+- [x] 根据 2026-09-29 部署冒烟反馈发布 v0.1.1：公开案例补入已有真实运行记录的 A02、U04、R02；新增同时包含 YAML 和验证报告的一键 ZIP 下载，并保留两个单文件入口。
 - [ ] 录制并上传 2–3 分钟演示视频。
 - [x] 将最终 Demo 和仓库链接填回 README、申请表、简历和作品集文案。
 - [ ] 录制完成后将视频链接填回文档。

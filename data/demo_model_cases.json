@@ -50,7 +50,7 @@
       "output_tokens": 118,
       "error": null
     },
-    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+    "source_note": "Actual local Ollama run (compiler-dev-v0.12-threshold-schema); synthetic input; not a user-study result."
   },
   {
     "id": "S02",
@@ -102,7 +102,7 @@
       "output_tokens": 101,
       "error": null
     },
-    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+    "source_note": "Actual local Ollama run (compiler-dev-v0.12-threshold-schema); synthetic input; not a user-study result."
   },
   {
     "id": "M01",
@@ -173,7 +173,7 @@
       "output_tokens": 211,
       "error": null
     },
-    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+    "source_note": "Actual local Ollama run (compiler-dev-v0.12-threshold-schema); synthetic input; not a user-study result."
   },
   {
     "id": "M02",
@@ -235,21 +235,22 @@
       "output_tokens": 158,
       "error": null
     },
-    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+    "source_note": "Actual local Ollama run (compiler-dev-v0.12-threshold-schema); synthetic input; not a user-study result."
   },
   {
-    "id": "A01",
+    "id": "A02",
     "category": "ambiguous",
-    "user_request": "晚上帮我开灯。",
+    "user_request": "太冷的时候开空调。",
     "ir": {
-      "name": "晚上开灯",
+      "name": "太冷时开空调",
       "description": "",
       "triggers": [],
       "conditions": [],
       "actions": [],
       "clarification_questions": [
-        "您希望在晚上哪个具体时间开灯？",
-        "您希望开哪个房间的灯？"
+        "请明确说明‘太冷’的具体温度阈值（例如低于多少摄氏度）。",
+        "请说明需要开启空调的房间（例如客厅或卧室）。",
+        "是否需要设定空调的目标温度？"
       ],
       "risk_acknowledgements": []
     },
@@ -275,41 +276,54 @@
         "num_ctx": 8192,
         "think": false
       },
-      "requested_at": "2026-09-20T13:52:32.867986Z",
-      "latency_ms": 1336,
-      "raw_output_sha256": "9c169138f7a5ce18a6b47ccc5c1648f7e3ecde852fefa72d8357702a2ec69fc6",
+      "requested_at": "2026-09-20T13:52:34.227592Z",
+      "latency_ms": 1707,
+      "raw_output_sha256": "858186d48593ce2c833add8620081622e61ed4834d14f9ca3cdc7b7312067108",
       "attempt_output_sha256": [
-        "9c169138f7a5ce18a6b47ccc5c1648f7e3ecde852fefa72d8357702a2ec69fc6"
+        "858186d48593ce2c833add8620081622e61ed4834d14f9ca3cdc7b7312067108"
       ],
       "retries": 0,
       "parse_status": "success",
-      "input_tokens": 2435,
-      "output_tokens": 69,
+      "input_tokens": 2436,
+      "output_tokens": 95,
       "error": null
     },
-    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+    "source_note": "Actual local Ollama run (compiler-dev-v0.12-threshold-schema); synthetic input; not a user-study result."
   },
   {
-    "id": "U01",
+    "id": "U04",
     "category": "unsupported",
-    "user_request": "晚上八点打开厨房风扇。",
+    "user_request": "玄关有人时把客厅灯亮度设为300。",
     "ir": {
-      "name": "晚上八点开启厨房风扇",
+      "name": "玄关有人时调整客厅灯亮度",
       "description": "",
-      "triggers": [],
-      "conditions": [],
-      "actions": [],
-      "clarification_questions": [
-        "厨房风扇的 entity_id 未在 inventory 中找到，请提供厨房风扇的设备信息。"
+      "triggers": [
+        {
+          "trigger_type": "state",
+          "entity_id": "binary_sensor.hall_motion",
+          "from_state": null,
+          "to_state": "on"
+        }
       ],
+      "conditions": [],
+      "actions": [
+        {
+          "entity_id": "light.living_main",
+          "service": "light.turn_on",
+          "parameters": {
+            "brightness": 300
+          }
+        }
+      ],
+      "clarification_questions": [],
       "risk_acknowledgements": []
     },
     "validation_issues": [
       {
-        "code": "CLARIFICATION_REQUIRED",
+        "code": "PARAMETER_OUT_OF_RANGE",
         "severity": "blocking",
-        "path": "clarification_questions",
-        "message": "需求信息不足，请先回答澄清问题",
+        "path": "actions[0].parameters.brightness",
+        "message": "brightness=300 超出允许范围 1–255",
         "requires_confirmation": false,
         "acknowledgement_key": null
       }
@@ -318,7 +332,7 @@
       "model": "qwen3:14b-q4_K_M",
       "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
       "ollama_version": "0.34.1",
-      "prompt_version": "compiler-dev-v0.12-threshold-schema",
+      "prompt_version": "compiler-v1.0",
       "schema_version": "automation-ir-v0.4",
       "generation_config": {
         "temperature": 0,
@@ -326,71 +340,79 @@
         "num_ctx": 8192,
         "think": false
       },
-      "requested_at": "2026-09-20T13:52:37.536765Z",
-      "latency_ms": 2843,
-      "raw_output_sha256": "723ec5f70d12f28cae8bb1b755b3109028b5b635e8674b17f6c0068f39fabe2e",
+      "requested_at": "2026-09-20T14:07:14.723074Z",
+      "latency_ms": 2133,
+      "raw_output_sha256": "96b6249bfdf862ab0c9740a6645d904d35181b9fd4e8fb69bfbbc816055c631c",
       "attempt_output_sha256": [
-        "777e87cd756e56a02d9eb02ae9db4e435d69817d504836cc3047cdc15e7d58b4",
-        "723ec5f70d12f28cae8bb1b755b3109028b5b635e8674b17f6c0068f39fabe2e"
-      ],
-      "retries": 1,
-      "parse_status": "success",
-      "input_tokens": 2702,
-      "output_tokens": 70,
-      "error": null
-    },
-    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
-  },
-  {
-    "id": "R01",
-    "category": "conflict_safety",
-    "user_request": "晚上七点同时打开和关闭客厅主灯。",
-    "ir": {
-      "name": "矛盾的客厅主灯操作",
-      "description": "用户请求同时打开和关闭客厅主灯，这在逻辑上是矛盾的。请明确具体需求：是希望在晚上七点打开客厅主灯，还是关闭它？",
-      "triggers": [],
-      "conditions": [],
-      "actions": [],
-      "clarification_questions": [
-        "用户请求同时打开和关闭客厅主灯，这在逻辑上是矛盾的。请明确具体需求：是希望在晚上七点打开客厅主灯，还是关闭它？"
-      ],
-      "risk_acknowledgements": []
-    },
-    "validation_issues": [
-      {
-        "code": "CLARIFICATION_REQUIRED",
-        "severity": "blocking",
-        "path": "clarification_questions",
-        "message": "需求信息不足，请先回答澄清问题",
-        "requires_confirmation": false,
-        "acknowledgement_key": null
-      }
-    ],
-    "model_run": {
-      "model": "qwen3:14b-q4_K_M",
-      "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
-      "ollama_version": "0.34.1",
-      "prompt_version": "compiler-dev-v0.12-threshold-schema",
-      "schema_version": "automation-ir-v0.4",
-      "generation_config": {
-        "temperature": 0,
-        "seed": 42,
-        "num_ctx": 8192,
-        "think": false
-      },
-      "requested_at": "2026-09-20T13:52:46.358675Z",
-      "latency_ms": 2275,
-      "raw_output_sha256": "9501ad34f8830d0f5ba4cad3f5998adcf22b931d773294275f34cf646e4e9120",
-      "attempt_output_sha256": [
-        "9501ad34f8830d0f5ba4cad3f5998adcf22b931d773294275f34cf646e4e9120"
+        "96b6249bfdf862ab0c9740a6645d904d35181b9fd4e8fb69bfbbc816055c631c"
       ],
       "retries": 0,
       "parse_status": "success",
-      "input_tokens": 2441,
-      "output_tokens": 133,
+      "input_tokens": 2444,
+      "output_tokens": 124,
       "error": null
     },
-    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+    "source_note": "Actual local Ollama run (compiler-v1.0); synthetic input; not a user-study result."
+  },
+  {
+    "id": "R02",
+    "category": "conflict_safety",
+    "user_request": "晚上十点自动解锁入户门。",
+    "ir": {
+      "name": "晚上十点解锁入户门",
+      "description": "",
+      "triggers": [
+        {
+          "trigger_type": "time",
+          "at": "22:00:00"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "entity_id": "lock.front_door",
+          "service": "lock.unlock",
+          "parameters": {}
+        }
+      ],
+      "clarification_questions": [],
+      "risk_acknowledgements": []
+    },
+    "validation_issues": [
+      {
+        "code": "SENSITIVE_ACTION",
+        "severity": "blocking",
+        "path": "actions[0]",
+        "message": "门锁解锁属于敏感动作，必须由用户明确确认",
+        "requires_confirmation": true,
+        "acknowledgement_key": "confirm:lock.front_door:lock.unlock"
+      }
+    ],
+    "model_run": {
+      "model": "qwen3:14b-q4_K_M",
+      "model_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "ollama_version": "0.34.1",
+      "prompt_version": "compiler-dev-v0.12-threshold-schema",
+      "schema_version": "automation-ir-v0.4",
+      "generation_config": {
+        "temperature": 0,
+        "seed": 42,
+        "num_ctx": 8192,
+        "think": false
+      },
+      "requested_at": "2026-09-20T13:52:48.641010Z",
+      "latency_ms": 1827,
+      "raw_output_sha256": "7a63c5b3e12d0823bbf1e26100d570c664d2e8a8d04fd3367646ed297832d48d",
+      "attempt_output_sha256": [
+        "7a63c5b3e12d0823bbf1e26100d570c664d2e8a8d04fd3367646ed297832d48d"
+      ],
+      "retries": 0,
+      "parse_status": "success",
+      "input_tokens": 2438,
+      "output_tokens": 103,
+      "error": null
+    },
+    "source_note": "Actual local Ollama run (compiler-dev-v0.12-threshold-schema); synthetic input; not a user-study result."
   },
   {
     "id": "R03",
@@ -452,6 +474,6 @@
       "output_tokens": 108,
       "error": null
     },
-    "source_note": "Actual local Ollama run; synthetic input; not a user-study result."
+    "source_note": "Actual local Ollama run (compiler-dev-v0.12-threshold-schema); synthetic input; not a user-study result."
   }
 ]

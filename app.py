@@ -9,7 +9,7 @@ import streamlit as st
 from homeflow import __version__
 from homeflow.compiler import CompilerError, OllamaClient, compile_request
 from homeflow.evaluation import load_cases
-from homeflow.exporter import ExportBlocked, export_yaml, validation_report_json
+from homeflow.exporter import ExportBlocked, build_export_bundle, export_yaml, validation_report_json
 from homeflow.grounding import grounding_issues
 from homeflow.io_utils import InputError, load_inventory, parse_inventory_bytes, parse_ir_text
 from homeflow.models import AutomationIR, DeviceInventory, SimulationInput
@@ -187,7 +187,7 @@ with demand_tab:
         help="本地模型模式可自由编辑；公开模式只能选择固化案例，不会实时理解修改后的文字。",
     )
     if mode == "公开参考案例" and frozen_cases:
-        st.caption("以下是冻结前开发版的真实本地模型输出，仅用于交互演示；不是锁定测试集结果或实时模型调用。")
+        st.caption("以下是已保存的真实本地模型输出，仅用于交互演示；输入均为合成场景，具体版本见运行记录，不是实时模型调用。")
     if st.button("生成候选规则", type="primary", width="stretch"):
         if mode == "公开参考案例":
             if frozen_cases:
@@ -323,7 +323,16 @@ with export_tab:
         else:
             try:
                 yaml_content = export_yaml(ir_value, inventory)
+                report_content = validation_report_json(issues)
                 st.code(yaml_content, language="yaml")
+                st.download_button(
+                    "下载完整验证包（ZIP，推荐）",
+                    build_export_bundle(yaml_content, report_content),
+                    "homeflow-export-bundle.zip",
+                    "application/zip",
+                    width="stretch",
+                )
+                st.caption("完整验证包同时包含 Home Assistant YAML 和验证报告；也可在下方分别下载。")
                 c1, c2 = st.columns(2)
                 c1.download_button(
                     "下载 Home Assistant YAML",
@@ -334,7 +343,7 @@ with export_tab:
                 )
                 c2.download_button(
                     "下载验证报告",
-                    validation_report_json(issues),
+                    report_content,
                     "homeflow-validation.json",
                     "application/json",
                     width="stretch",

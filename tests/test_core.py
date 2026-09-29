@@ -1,9 +1,17 @@
 import json
+import zipfile
+from io import BytesIO
 from pathlib import Path
 
 import pytest
 
-from homeflow.exporter import ExportBlocked, export_yaml, static_yaml_check, yaml_to_ir
+from homeflow.exporter import (
+    ExportBlocked,
+    build_export_bundle,
+    export_yaml,
+    static_yaml_check,
+    yaml_to_ir,
+)
 from homeflow.io_utils import InputError, parse_inventory_bytes
 from homeflow.models import AutomationIR, SimulationInput
 from homeflow.simulator import simulate
@@ -72,6 +80,18 @@ def test_supported_yaml_round_trip(inventory):
     source = valid_ir()
     parsed = yaml_to_ir(export_yaml(source, inventory))
     assert parsed.model_dump(mode="json") == source.model_dump(mode="json")
+
+
+def test_export_bundle_contains_yaml_and_validation_report(inventory):
+    yaml_content = export_yaml(valid_ir(), inventory)
+    report_content = "[]"
+    with zipfile.ZipFile(BytesIO(build_export_bundle(yaml_content, report_content))) as archive:
+        assert set(archive.namelist()) == {
+            "homeflow-automation.yaml",
+            "homeflow-validation.json",
+        }
+        assert archive.read("homeflow-automation.yaml").decode("utf-8") == yaml_content
+        assert archive.read("homeflow-validation.json").decode("utf-8") == report_content
 
 
 def test_unknown_entity_fails_closed(inventory):

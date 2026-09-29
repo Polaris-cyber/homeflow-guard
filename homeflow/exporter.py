@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import io
 import json
+import zipfile
 from typing import Any
 
 import yaml
@@ -118,6 +120,15 @@ def static_yaml_check(content: str) -> tuple[bool, list[str]]:
 
 def validation_report_json(issues: list[ValidationIssue]) -> str:
     return json.dumps([issue.model_dump(mode="json") for issue in issues], ensure_ascii=False, indent=2)
+
+
+def build_export_bundle(yaml_content: str, report_content: str) -> bytes:
+    """Package the reviewable YAML and validation evidence into one download."""
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr("homeflow-automation.yaml", yaml_content)
+        archive.writestr("homeflow-validation.json", report_content)
+    return buffer.getvalue()
 
 
 def yaml_to_ir(content: str) -> AutomationIR:

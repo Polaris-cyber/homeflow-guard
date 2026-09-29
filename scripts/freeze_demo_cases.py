@@ -17,7 +17,8 @@ from homeflow.models import AutomationIR  # noqa: E402
 from homeflow.validator import validate_automation  # noqa: E402
 
 
-SELECTED_IDS = ["S01", "S02", "M01", "M02", "A01", "U01", "R01", "R03"]
+SELECTED_IDS = ["S01", "S02", "M01", "M02", "A02", "U04", "R02", "R03"]
+RUN_VERSION_OVERRIDES = {"U04": "compiler-v1.0"}
 OUTPUT = ROOT / "data" / "demo_model_cases.json"
 
 
@@ -30,7 +31,8 @@ def main() -> None:
     frozen = []
     missing = []
     for case_id in SELECTED_IDS:
-        run_path = ROOT / "artifacts" / "model_runs" / args.prompt_version / f"{case_id}-guarded.json"
+        run_version = RUN_VERSION_OVERRIDES.get(case_id, args.prompt_version)
+        run_path = ROOT / "artifacts" / "model_runs" / run_version / f"{case_id}-guarded.json"
         if not run_path.exists():
             missing.append(case_id)
             continue
@@ -48,7 +50,10 @@ def main() -> None:
                 "ir": ir.model_dump(mode="json"),
                 "validation_issues": [issue.model_dump(mode="json") for issue in validate_automation(ir, inventory)],
                 "model_run": payload["run"],
-                "source_note": "Actual local Ollama run; synthetic input; not a user-study result.",
+                "source_note": (
+                    f"Actual local Ollama run ({run_version}); synthetic input; "
+                    "not a user-study result."
+                ),
             }
         )
     if missing:

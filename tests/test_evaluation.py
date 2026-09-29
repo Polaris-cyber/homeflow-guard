@@ -23,6 +23,7 @@ def test_dataset_shape_and_review_status():
 def test_all_frozen_public_demo_rules_load_under_current_schema():
     cases = json.loads((ROOT / "data" / "demo_model_cases.json").read_text(encoding="utf-8"))
     assert len(cases) == 8
+    assert {case["id"] for case in cases} == {"S01", "S02", "M01", "M02", "A02", "U04", "R02", "R03"}
     for case in cases:
         AutomationIR.model_validate(case["ir"])
         assert case["model_run"]["model_digest"]
